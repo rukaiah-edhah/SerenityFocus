@@ -8,6 +8,8 @@ const cors = require('cors');
 const api = require('./routes/api');
 const router = require('./routes/viewRoutes');
 
+const session = require('express-session');
+
 const aLoggerMiddleware = (req, res, next) => {
     console.log(req.url, req.method, res.statusCode);
     next();
@@ -20,6 +22,12 @@ app.use(
 );
 
 app.use(cors());
+app.use(session({
+    secret: 'secret-key', // add a unique strong secret in .env
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true } // set to true if using https
+}));
 
 app.use(router);
 app.use(express.static('client/public'));

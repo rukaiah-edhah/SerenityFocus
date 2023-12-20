@@ -5,18 +5,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Productivity Nerds</title>
 	<link rel="stylesheet" href="./index.css">
+	
+	<script src="https://kit.fontawesome.com/6f3103b13c.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 	<header>
-		<!-- <div class="topnav">
-			<a href="">THEMES</a>
-			<a href="">ABOUT US</a>
-			<a href="">SIGN IN / SIGN UP</a>
-		</div> -->
 		<div class="container">
 			<button type="submit" class="btn" onclick="openPopup()">ABOUT US</button>
 			<button type="themes" class="btn" onclick="openPopup()">THEMES</button>
 			<button type="sign_in_sign_up" class="btn" onclick="openSignin()">SIGN IN/ SIGN UP</button>
+		</div>
+		<div class="timer">
+			<div class="circle">
+				<div class="time">
+					<p id="minutes">25</p>
+					<p>:</p>
+					<p id="seconds">00</p>
+				</div>
+			</div>
+		</div>
+		<div class="controls">
+			<button id="start" onclick="start()"><i class="fa-solid fa-play"></i></button>
+			<a id="reset" href="./"><i class="fa-solid fa-arrow-rotate-left"></i></a>
 		</div>
 		<div class="popup" id="popup">
 			<img src="./images/Shevan.jpg" alt="picture of Shevan">

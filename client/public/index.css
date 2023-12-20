@@ -1,3 +1,11 @@
+:root {
+	font-size: 70%; /* 1rem = 10px */
+
+	--color-primary: #FCCCAD;
+	--color-secondary: hsl(358, 78%, 69%);
+	--color-font: hsla(0, 0%, 100%, 0.902);
+}
+
 *{
 	margin: 0;
 	padding: 0;
@@ -20,7 +28,7 @@ p {
 
 .container {
 	display: flex;
-	justify-content:start;
+	justify-content:center;
 }
 
 .btn{
@@ -31,6 +39,7 @@ p {
 	font-size: 15px;
 	font-weight: 500;
 }
+
 .popup {
 	width: 280px;
 	background: #f5df9d;
@@ -97,7 +106,66 @@ input{
 	border-radius: 10px;
 }
 
+.timer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30rem;
+	height: 30rem;
+	border-radius: 50%;
+}
 
+.circle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 26rem;
+	height: 26rem;
+	border-radius: 50%;
+	background-color: var(--color-secondary);
+	position: relative;
+}
+
+.circle::before {
+	content: '';
+	position: absolute;
+	width: 95%;
+	height: 95%;
+	border-radius: 50%;
+	background-color: var(--color-primary);
+}
+
+.time {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+}
+
+.time p {
+	font-size: 5.6rem;
+}
+
+.time p:nth-of-type(2) {
+	position: relative;
+	top: -.5rem;
+	margin-inline: 1rem;
+}
+
+.controls {
+	margin-top: 3rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.controls button {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.controls #reset {
+	display: none;
+}
 
 /*
 body {

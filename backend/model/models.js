@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 // let Schema = mongoose.Schema;
 
+const nameValidationRegex = /^[a-zA-Z]+(?:['-][a-zA-Z]+)*$/;
+
 // insert schema later
 mongoose.connect(process.env.DEV)
     .then(() => console.log("MongoDB connected"))
@@ -13,11 +15,19 @@ mongoose.connect(process.env.DEV)
             minlength: [3, 'Username must be at least 3 characters long'],
             unique: true 
         },
-        fullname: {
+        firstName: {
             type: String,
-            required: [true, 'Full name is required'],
-            trim: true, // Trims whitespace from the beginning and end
-            minlength: [3, 'Full name must be at least 3 characters long'],
+            required: [true, 'First name is required'],
+            trim: true,
+            minlength: [2, 'First name must be at least 2 characters long'],
+            match: [nameValidationRegex, 'First name contains invalid characters'],
+        },
+        lastName: {
+            type: String,
+            required: [true, 'Last name is required'],
+            trim: true,
+            minlength: [2, 'Last name must be at least 2 characters long'],
+            match: [nameValidationRegex, 'First name contains invalid characters'],
         },
         email: {
             type: String,
@@ -56,6 +66,7 @@ const taskSchema = new mongoose.Schema({
         required: [true, 'Task description is required'],
         trim: true,
         minlength: [5, 'Description must be at least 5 characters long'],
+        match: [/.+/, 'Description cannot be empty']
     },
     status: { 
         type: String,

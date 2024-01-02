@@ -104,5 +104,6 @@ const pomodoroSessionSchema = new mongoose.Schema({
 
 const tasks = mongoose.model("Tasks", taskSchema);
 const pomodoroSession = mongoose.model("Pomodoro Session", pomodoroSessionSchema);
+const connection = mongoose.createConnection(process.env.DEV); // added for user tracking -> you can edit this later
 
-module.exports = { users, tasks, pomodoroSession };
+module.exports = { users, tasks, pomodoroSession, connection };

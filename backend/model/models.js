@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
-// let Schema = mongoose.Schema;
+const bcrypt = require('bcrypt');
+const SALT_WORK_FACTOR = 10;
 
+// Regular expressions for validation
 const nameValidationRegex = /^[a-zA-Z]+(?:['-][a-zA-Z]+)*$/;
+const emailValidationRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const passwordValidationRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
-// insert schema later
 mongoose.connect(process.env.DEV)
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.log("MongoDB connection error: ", err))
@@ -35,7 +38,7 @@ mongoose.connect(process.env.DEV)
             unique: true,
             validate: {
                 validator: function (value) {
-                  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+                  return emailValidationRegex.test(value);
                 },
                 message: 'Invalid email address format'
             }
@@ -45,14 +48,33 @@ mongoose.connect(process.env.DEV)
             required: true,
             validate: {
                 validator: function(password) {
-                    return /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password);
+                    return passwordValidationRegex.test(password);
                 },
                 message: 'Password must be at least 8 characters long, including at least one letter, one number, and one special character.'
             }
         }
     });
 
-const users = mongoose.model("Users", userSchema);
+
+    // Pre-save hook to hash the password
+userSchema.pre('save', function(next) {
+    // Only hash the password if it has been modified (or is new)
+    if (!this.isModified('password')) return next();
+
+    // Generate salt and hash the password
+    bcrypt.genSalt(SALT_WORK_FACTOR, (err, salt) => {
+        if (err) return next(err);
+
+        bcrypt.hash(this.password, salt, (err, hash) => {
+            if (err) return next(err);
+            this.password = hash; // Replace the plain text password with the hash
+            next();
+        });
+    });
+});
+
+
+const Users = mongoose.model("Users", userSchema);
 
 
 const taskSchema = new mongoose.Schema({
@@ -102,8 +124,8 @@ const pomodoroSessionSchema = new mongoose.Schema({
     },
 });
 
-const tasks = mongoose.model("Tasks", taskSchema);
-const pomodoroSession = mongoose.model("Pomodoro Session", pomodoroSessionSchema);
+const Tasks = mongoose.model("Tasks", taskSchema);
+const PomodoroSession = mongoose.model("Pomodoro Session", pomodoroSessionSchema);
 const connection = mongoose.createConnection(process.env.DEV); // added for user tracking -> you can edit this later
 
-module.exports = { users, tasks, pomodoroSession, connection };
+module.exports = { Users, Tasks, PomodoroSession, connection };

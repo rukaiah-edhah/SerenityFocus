@@ -1,10 +1,8 @@
 const express = require('express');
 const api = express.Router();
-const { users, tasks, pomodoroSession } = require('../model/models');
+const { Users, Tasks, PomodoroSession } = require('../model/models');
 const { ObjectId } = require('mongodb');
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-const session = require('express-session');
 
 // USER API
 
@@ -29,7 +27,7 @@ api.post("/post_user", async (req, res) => {
     try {
         // const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
-        const newUser = await users.create({
+        const newUser = await Users.create({
             username: req.body.username,
             fullname: req.body.fullname,
             email: req.body.email,
@@ -90,7 +88,7 @@ api.delete("/delete_user/:id", async (req, res) => {
 
 api.get("/get_tasks", async (req, res) => {
     try {
-        const getTasks = await tasks.find({});
+        const getTasks = await Tasks.find({});
 
         res.json(getTasks);
     } catch (err) {
@@ -107,9 +105,9 @@ api.post("/post_tasks/:id", async (req, res) => {
             return res.status(400).json({ error: 'Invalid ObjectId'});
         }
 
-        const findUser = await tasks.findById(id);
+        const findUser = await Tasks.findById(id);
 
-        const newTask = await tasks.create({
+        const newTask = await Tasks.create({
             user: new ObjectId(id),
             description: req.body.description,
             status: req.body.status,
@@ -134,7 +132,7 @@ api.patch("/update_task/:id", async (req, res) => {
             return res.status(400).json({ error: 'Invalid ObjectId'});
         }
 
-        const updateTask = await tasks.findByIdAndUpdate(id, 
+        const updateTask = await Tasks.findByIdAndUpdate(id, 
             { description: req.body.description}
         );
 
@@ -157,7 +155,7 @@ api.delete("/delete_task/:id", async (req, res) => {
             return res.status(400).json({ error: 'Invalid ObjectId'});
         }
 
-        const deletedTask = await tasks.findByIdAndDelete(id);
+        const deletedTask = await Tasks.findByIdAndDelete(id);
 
         if (!deletedTask) {
             return res.status(404).json({ error: "Data not found"});
@@ -174,7 +172,7 @@ api.delete("/delete_task/:id", async (req, res) => {
 
 api.get("/get_pomodoro_sessions", async (req, res) => {
     try {
-        const getPomodoroSession = await pomodoroSession.find({});
+        const getPomodoroSession = await PomodoroSession.find({});
 
         res.json(getPomodoroSession);
     } catch (err) {
@@ -185,7 +183,7 @@ api.get("/get_pomodoro_sessions", async (req, res) => {
 
 api.post("/post_pomodoro_session", async (req, res) => {
     try {
-        const newPomodoroSession = await pomodoroSession.create({
+        const newPomodoroSession = await PomodoroSession.create({
             startTime: req.body.startTime,
             endTime: req.body.endTime,
             defaultDuration: req.body.defaultDuration,

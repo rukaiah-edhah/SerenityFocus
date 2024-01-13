@@ -52,7 +52,9 @@ mongoose.connect(process.env.DEV)
                 },
                 message: 'Password must be at least 8 characters long, including at least one letter, one number, and one special character.'
             }
-        }
+        },
+        salt: String,
+        hash: String,
     });
 
 

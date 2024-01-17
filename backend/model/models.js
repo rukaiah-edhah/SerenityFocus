@@ -15,6 +15,7 @@ mongoose.connect(process.env.DEV)
         username: {
             type: String,
             required: [true, 'Username is required'],
+            index: true,
             minlength: [3, 'Username must be at least 3 characters long'],
             unique: true 
         },
@@ -36,6 +37,7 @@ mongoose.connect(process.env.DEV)
             type: String,
             required: true,
             unique: true,
+            index: true,
             validate: {
                 validator: function (value) {
                   return emailValidationRegex.test(value);
@@ -55,7 +57,7 @@ mongoose.connect(process.env.DEV)
         },
         salt: String,
         hash: String,
-    });
+    }, { timestamps: true });
 
 
     // Pre-save hook to hash the password
@@ -83,6 +85,7 @@ const taskSchema = new mongoose.Schema({
     user: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'Users',
+        index: true,
         required: true
     },
     description: { 
@@ -97,12 +100,13 @@ const taskSchema = new mongoose.Schema({
         enum: ['pending', 'completed'],
         default: 'pending'
     }
-});
+}, { timestamps: true });
 
 const pomodoroSessionSchema = new mongoose.Schema({
     user: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'Users',
+        index: true,
         required: true 
     },
     startTime: { 
@@ -123,8 +127,8 @@ const pomodoroSessionSchema = new mongoose.Schema({
     sessionType: { 
         type: String,
         enum: ['session', 'break']
-    },
-});
+    }
+}, { timestamps: true });
 
 const Tasks = mongoose.model("Tasks", taskSchema);
 const PomodoroSession = mongoose.model("Pomodoro Session", pomodoroSessionSchema);

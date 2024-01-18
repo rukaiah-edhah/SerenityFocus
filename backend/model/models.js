@@ -7,7 +7,7 @@ const nameValidationRegex = /^[a-zA-Z]+(?:['-][a-zA-Z]+)*$/;
 const emailValidationRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const passwordValidationRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
-mongoose.connect(process.env.DEV)
+mongoose.connect(process.env.MODE === "prod" ? process.env.PROD : process.env.DEV)
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.log("MongoDB connection error: ", err))
 
@@ -132,6 +132,6 @@ const pomodoroSessionSchema = new mongoose.Schema({
 
 const Tasks = mongoose.model("Tasks", taskSchema);
 const PomodoroSession = mongoose.model("Pomodoro Session", pomodoroSessionSchema);
-const connection = mongoose.createConnection(process.env.DEV); // added for user tracking -> you can edit this later
+const connection = mongoose.createConnection(process.env.MODE === "prod" ? process.env.PROD : process.env.DEV); // added for user tracking -> you can edit this later
 
 module.exports = { Users, Tasks, PomodoroSession, connection };

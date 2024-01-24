@@ -29,7 +29,9 @@ api.post("/post_user", async (req, res) => {
 
         const newUser = await Users.create({
             username: req.body.username,
-            fullname: req.body.fullname,
+            // Removed fullname and added firstName and lastName to match the database schema
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
             email: req.body.email,
             password: req.body.password
         })
@@ -189,7 +191,7 @@ api.post("/post_pomodoro_session", async (req, res) => {
             defaultDuration: req.body.defaultDuration,
             customDuration: req.body.customDuration,
             sessionType: req.body.sessionType,
-            intention: req.body.intention
+            // Removed intention since we no longer have it
         });
 
         res.json(newPomodoroSession);

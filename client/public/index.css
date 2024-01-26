@@ -3,12 +3,12 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Times New Roman', Times, serif;
-	background: var(--background);
 	--background: #FCCCAD;
 	--pop_up_background: #f5df9d;
 	--text_color: #753F27;
 	--hover: #bd6b00;
 }
+
 
 h2{
 	text-align: center;
@@ -106,14 +106,6 @@ input{
 
 /*timer*/
 
-h1 {
-  margin: 0 auto 10px auto;
-  color: var(--text_color);
-}
-
-p {
-  margin: 0;
-}
 
 .app-message {
   height: 20px;
@@ -123,10 +115,10 @@ p {
 .app-container {
   width: 250px;
   height: 420px;
-  margin: 40px auto;
+  margin: 0px auto;
   text-align: center;
-  border-radius: 5px;
-  padding: 20px;
+  border-radius: 10px;
+  padding: 0px;
 }
 
 .app-circle {
@@ -145,7 +137,8 @@ p {
   width: 100px;
   height: 200px;
   box-sizing: border-box;
-  border: solid 6px;
+  border: solid 10px;
+	z-index: 0;
 }
 
 .left-side {

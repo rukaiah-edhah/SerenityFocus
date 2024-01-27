@@ -1,24 +1,29 @@
 *{
 	font-family: 'Times New Roman', Times, serif;
+}
+
+:root {
 	/* main theme */
 	--background: #FCCCAD;
 	--pop_up_background: #f5df9d;
 	--text_color: #753F27;
 	--hover: #bd6b00;
+	--tasks_background: #C29857;
 	background-color: var(--background);
 }
 
 /* navigation bar */
 
 .nav_bar {
-	display: flex;
+	display:flex;
 	justify-content:center;
 }
 
 .btn{
 	border: 0;
-	padding:6%;
+	padding:2%;
 	font-size: 20px;
+	background-color: var(--background);
 }
 
 button:hover {
@@ -56,8 +61,8 @@ h2{
 }
 
 .about img{
-	width: 70px;
-	height: 70px;
+	width: 90px;
+	height: 90px;
 	margin-top: -30px;
 	border-radius: 50%;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 10);
@@ -116,9 +121,18 @@ input{
 #sign_in {
 	position: center;
 }
-
+/* tasks */
+.tasks {
+	background: var(--tasks_background);
+	border-radius: 10px;
+	position:relative;
+	top: 4vw;
+	left: 35vw;
+	width: 220px;
+	padding:10px 30px 30px;
+	color:var(--text_color) ;
+}
 /*timer*/
-
 .app-container {
   position: relative;
 	top:0px;
@@ -129,7 +143,6 @@ input{
   border-radius: 1px;
   padding: 20px;
 }
-
 
 .app-circle {
   position: relative;
@@ -179,10 +192,9 @@ input{
 }
 
 .app-counter-box {
-  font-size: 200%;
+  font-size: 40px;
 	position:relative;
-	align-content: center;
-  top: 65px;
+  top: 75px;
   color: var(--text_color);
 }
 
@@ -190,7 +202,6 @@ input{
   position: relative;
   top: 5px;
   font-size: 20px;
-  text-transform: uppercase;
   letter-spacing: 1px;
   border: none;
   background: none;
@@ -211,6 +222,6 @@ input{
 /* footer */
 
 footer {
-display: flex;
+display:flex;
 justify-content: center;
 }

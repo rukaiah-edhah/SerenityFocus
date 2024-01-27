@@ -5,10 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Serenity Focus</title>
 	<link rel="stylesheet" href="./index.css">
-	
-	<script src="https://kit.fontawesome.com/6f3103b13c.js" crossorigin="anonymous"></script>
-
 </head>
+
 <body>
 	<header>
 		<div class="container">
@@ -16,6 +14,33 @@
 			<button type="themes" class="btn" onclick="openPopup()">THEMES</button>
 			<button type="sign_in_sign_up" class="btn" onclick="openSignin()">SIGN IN/ SIGN UP</button>
 		</div>
+	</header>
+		<div class="about" id="about">
+			<img src="./images/Shevan.jpg" alt="picture of Shevan">
+			<img src="./images/Rukaiah.jpg" alt="picture of Rukaiah">
+			<img src="./images/Shaad.png" alt="picture of Shaad">
+			<h2>About Us</h2>
+			<p>
+				We are the productivity nerds. Our goal is to provide
+				you with the tools to optimize your time by creating an enviroment that keeps you focused on your tasks. Our team conists of Rukaiah, Shaad and Shevan. We are happy that you are here. Enjoy!
+			</p>
+			<button type="button" onclick="closePopup()">OK</button>
+		</div>
+		<div class="sign_in" id="sign_in">
+			<h2>Sign In</h2>
+			<form>
+				<div>
+					<label for="username">Username:</label>
+					<input type="text" name="username" placeholder="Enter your username">
+				</div>
+				<div>
+					<label for="password">Password:</label>
+					<input type="password" name="password" placeholder="Enter your passwrord"> 
+				</div>
+			</form>
+			<button type="button" id="sign_in" onclick="closeSignin()">Sign in</button>
+		</div>
+	<main>
 		<div class="app-container">
 			<div class="app-circle">
 				<div class="circle-shape">
@@ -32,35 +57,9 @@
 			<button class="btn-start">Start</button>
 		</div>
 		
-		<div class="popup" id="popup">
-			<img src="./images/Shevan.jpg" alt="picture of Shevan">
-			<img src="./images/Rukaiah.jpg" alt="picture of Rukaiah">
-			<img src="./images/Shaad.png" alt="picture of Shaad">
-			<h2>About Us</h2>
-			<p>
-			We are the productivity nerds. Our goal is to provide
-			you with the tools to optimize your time by creating an enviroment that keeps you focused on your tasks. Our team conists of Rukaiah, Shaad and Shevan. We are happy that you are here. Enjoy!
-			</p>
-			<button type="button" onclick="closePopup()">OK</button>
-		</div>
-		<div class="sign_in" id="sign_in">
-			<h2>Sign In</h2>
-			<form>
-				<label for="username">Username:</label>
-				<input type="text" name="username" placeholder="Enter your username">
-				<div>
-				<label for="password">Password:</label>
-				<input type="password" name="password" placeholder="Enter your passwrord"> 
-				</div>
-			</form>
-			<button type="button" onclick="closeSignin()">Sign in</button>
-		</div>
-	</header>
-	<main>
-
 	</main>
 	<footer>
-
+		
 	</footer>
 	<script src="./index.js"></script>
 </body>

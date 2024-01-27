@@ -7,6 +7,7 @@
 	--pop_up_background: #f5df9d;
 	--text_color: #753F27;
 	--hover: #bd6b00;
+	background-color: var(--background);
 }
 
 
@@ -15,10 +16,6 @@ h2{
 	font-size: 38px;
 	font-weight: 500;
 	margin: 30px 0 10px;
-	background: none;
-}
-
-p {
 	background: none;
 }
 
@@ -36,7 +33,9 @@ p {
 	font-weight: 500;
 }
 
-.popup {
+/* about us */
+
+.about{
 	width: 280px;
 	background: var(--pop_up_background);
 	border-radius: 30px;
@@ -50,14 +49,11 @@ p {
 	transition: transform 0.4s, top 0.4s;
 }
 
-.open-popup{
-	visibility: visible;
-	top: 50%;
-	transform: translate(-50%, -50%) scale(1);
-	z-index: 2;
+.about p{
+	background-color: var(--pop_up_background);
 }
 
-.popup img{
+.about img{
 	width: 70px;
 	height: 70px;
 	margin-top: -30px;
@@ -65,7 +61,7 @@ p {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 10);
 }
 
-.popup button{
+.about button{
 	width: 100%;
 	margin-top: 50px;
 	padding: 10px 0;
@@ -78,6 +74,13 @@ p {
 	cursor: pointer;
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
+.open-popup{
+	visibility: visible;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(1);
+	z-index: 2;
+}
+/* sign_in */
 
 .sign_in {
 	width: 280px;
@@ -91,7 +94,7 @@ p {
 	color:var(--text_color) ;
 	visibility: hidden;
 	transition: transform 0.4s, top 0.4s;
-	z-index: 2;
+	z-index: 1;
 }
 
 .open-sign_in{
@@ -104,8 +107,13 @@ input{
 	border-radius: 10px;
 }
 
+.sign_in form label{
+	background-color: var(--pop_up_background);
+}
+#sign_in {
+	position: center;
+}
 /*timer*/
-
 
 .app-message {
   height: 20px;
@@ -115,11 +123,12 @@ input{
 .app-container {
   width: 250px;
   height: 420px;
-  margin: 0px auto;
+  margin: 40px auto;
   text-align: center;
-  border-radius: 10px;
-  padding: 0px;
+  border-radius: 5px;
+  padding: 20px;
 }
+
 
 .app-circle {
   position: relative;
@@ -138,7 +147,6 @@ input{
   height: 200px;
   box-sizing: border-box;
   border: solid 10px;
-	z-index: 0;
 }
 
 .left-side {
@@ -149,7 +157,6 @@ input{
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
   border-right: none;
-  z-index: 1;
 }
 
  .right-side {
@@ -172,9 +179,10 @@ input{
 
 .app-counter-box {
   font-family: 'Droid Sans Mono', monospace;
-  font-size: 250%;
+	background: var(--background);
+  font-size: 150%;
   position: relative;
-  top: 50px;
+  top: 10px;
   color: var(--text_color);
 }
 
@@ -192,19 +200,4 @@ input{
 
 button:hover {
   color: var(--hover);
-}
-
-/*
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }

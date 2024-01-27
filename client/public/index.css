@@ -125,7 +125,7 @@ input{
   height: 420px;
   margin: 40px auto;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 1px;
   padding: 20px;
 }
 
@@ -146,7 +146,7 @@ input{
   width: 100px;
   height: 200px;
   box-sizing: border-box;
-  border: solid 10px;
+  border: solid 6px;
 }
 
 .left-side {
@@ -178,17 +178,16 @@ input{
 }
 
 .app-counter-box {
-  font-family: 'Droid Sans Mono', monospace;
-	background: var(--background);
-  font-size: 150%;
-  position: relative;
-  top: 10px;
+  font-size: 200%;
+	position:relative;
+	align-content: center;
+  top: 65px;
   color: var(--text_color);
 }
 
 .app-container button {
   position: relative;
-  top: 50px;
+  top: 20px;
   font-size: 80%;
   text-transform: uppercase;
   letter-spacing: 1px;

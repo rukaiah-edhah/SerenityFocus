@@ -124,13 +124,29 @@ input{
 /* tasks */
 .tasks {
 	background: var(--tasks_background);
-	border-radius: 10px;
+	border-radius: 20px;
 	position:relative;
 	top: 4vw;
 	left: 35vw;
 	width: 220px;
 	padding:10px 30px 30px;
 	color:var(--text_color) ;
+}
+.tasks input{
+	background: var(--pop_up_background);
+	border-radius: 50px;
+	padding: 1rem 2rem;
+}
+
+#add {
+	background: var(--background);
+	color: var(--text_color);
+	border: 1px solid var(--text_color);
+	border-radius: 50%;
+	height: 40%;
+	position: absolute;
+	right: 50px;
+	top: 18px;
 }
 /*timer*/
 .app-container {

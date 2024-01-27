@@ -1,3 +1,5 @@
+// pop up effect
+
 let popup = document.getElementById("about")
 
 function openPopup(){

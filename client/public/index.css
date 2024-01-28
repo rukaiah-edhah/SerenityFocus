@@ -4,11 +4,13 @@
 
 :root {
 	/* main theme */
-	--background: #f4d3bd;
-	--pop_up_background: #f5df9d;
+	--background: #e9d0a6;
+	--pop_up_background: #ffd685;
 	--text_color: #753F27;
 	--hover: #bd6b00;
-	--tasks_background: #e6ae58;
+	--tasks_background: #C29857;
+	--shadow: #101010;
+	--input_background:#D9D9D9;
 	background-color: var(--background);
 }
 
@@ -88,7 +90,7 @@ h2{
 	outline: none;
 	font-size: 18px;
 	border-radius: 30px;
-	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 5px var(--shadow);
 }
 
 .open-popup{
@@ -144,24 +146,43 @@ input{
 	left: 35vw;
 	width: 220px;
 	padding:10px 30px 30px;
-	color:var(--text_color) ;
+	color: var(--text_color);
 }
 .tasks input{
-	background: var(--pop_up_background);
+	background: var(--input_background);
 	border-radius: 50px;
 	padding: 1rem 2rem;
 }
 
 #add {
-	background: var(--background);
+	background: var(--tasks_background);
 	color: var(--text_color);
-	border: 1px solid var(--text_color);
-	border-radius: 50%;
-	height: 40%;
+	border-radius: 15px;
+	height: 30px;
 	position: absolute;
 	right: 50px;
-	top: 18px;
+	top: 20px;
 }
+
+.field-group {
+	width:200px;
+	padding:10px;
+}
+
+.checkbox-field{
+	opacity: 0;
+}
+
+.checkbox-label{
+	position:relative;
+	padding-left: 40px;
+	font-size: 1.6em;
+	line-height: 1em;
+	color: var(--pop_up_background);
+	cursor: pointer;
+}
+
+
 /*timer*/
 main {
   position: relative;

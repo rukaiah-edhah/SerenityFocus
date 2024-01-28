@@ -21,3 +21,13 @@ function openSignin(){
 function closeSignin(){
 	signIn.classList.remove("open-sign_in")
 }
+
+// Timer
+
+const minutes = document.querySelector('.minutes'); //interface
+const secounds = document.querySelector('.seconds');
+
+const start = document.querySelector('.btn-start'); //controls
+const add = document.getElementById('btn-plus');
+const subt = document.getElementById('btn-subt');
+

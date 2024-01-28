@@ -4,16 +4,26 @@
 
 :root {
 	/* main theme */
-	--background: #FCCCAD;
+	--background: #f4d3bd;
 	--pop_up_background: #f5df9d;
 	--text_color: #753F27;
 	--hover: #bd6b00;
-	--tasks_background: #C29857;
+	--tasks_background: #e6ae58;
 	background-color: var(--background);
 }
 
-/* navigation bar */
+button {
+  position: relative;
+  top: 5px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  border: none;
+  background: none;
+  outline: none;
+  color: var(--text_color);
+}
 
+/* navigation bar */
 .nav_bar {
 	display:flex;
 	justify-content:center;
@@ -121,7 +131,11 @@ input{
 #sign_in {
 	position: center;
 }
+
+
 /* tasks */
+
+
 .tasks {
 	background: var(--tasks_background);
 	border-radius: 20px;
@@ -149,7 +163,7 @@ input{
 	top: 18px;
 }
 /*timer*/
-.app-container {
+main {
   position: relative;
 	top:0px;
 	width: 300px;
@@ -211,17 +225,6 @@ input{
   font-size: 40px;
 	position:relative;
   top: 75px;
-  color: var(--text_color);
-}
-
-.app-container button {
-  position: relative;
-  top: 5px;
-  font-size: 20px;
-  letter-spacing: 1px;
-  border: none;
-  background: none;
-  outline: none;
   color: var(--text_color);
 }
 

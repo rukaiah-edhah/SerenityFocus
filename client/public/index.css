@@ -101,38 +101,58 @@ h2{
 }
 
 /* sign_in */
-
 .sign_in {
-	width: 280px;
-	background: var(--pop_up_background);
-	border-radius: 30px;
-	position: absolute;
-	top: 1;
-	left: 50%;
-	transform: translate(-50%, -50%) scale(0.1);
-	padding:0 30px 30px;
-	color:var(--text_color) ;
-	visibility: hidden;
-	transition: transform 0.4s, top 0.4s;
+    width: 300px;
+    background: var(--pop_up_background);
+    border-radius: 30px;
+    position: absolute;
+    top: 1;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    padding: 20px 30px 30px;
+    color: var(--text_color);
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
 }
 
-.open-sign_in{
-	visibility: visible;
-	top: 50%;
-	transform: translate(-50%, -50%) scale(1);
-	z-index: 1;
+.open-sign_in {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 1;
 }
 
-input{
-	border-radius: 10px;
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
 }
 
-.sign_in form label{
-	background-color: var(--pop_up_background);
+
+.sign_in form label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text_color);
 }
-#sign_in {
-	position: center;
+
+#sign_in_btn {
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: var(--text_color);
+    color: var(--pop_up_background);
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 30px;
+    box-shadow: 0 5px 5px var(--shadow);
+    cursor: pointer;
 }
+
 
 
 /* tasks */

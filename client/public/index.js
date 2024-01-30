@@ -40,9 +40,19 @@ function goBack() {
     openSignIn();  
 }
 
-function openForgetPassword() {
-    // You can open another pop-up or redirect to a forget password page
+//Themes
+
+const toggleButton = document.getElementById('toggleButton');
+toggleButton.addEventListener('click', toggleTheme);
+
+function toggleTheme() {
+	const body = document.body;
+    body.classList.toggle('theme1');
+    body.classList.toggle('theme2');
+		body.classList.toggle('theme3');
 }
+
+
 
 // Timer
 

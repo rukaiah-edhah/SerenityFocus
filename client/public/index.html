@@ -8,11 +8,11 @@
 	<link rel="stylesheet" href="./index.css">
 </head>
 
-<body>
+<body class="theme1">
 	<header>
 		<div class="nav_bar">
 			<button type="submit" class="btn" onclick="openPopup()">ABOUT US</button>
-			<button type="themes" class="btn" onclick="openPopup()">THEMES</button>
+			<button type="themes" id="toggleButton" class="btn" >THEMES</button>
 			<button type="sign_in_sign_up" class="btn" onclick="openSignIn()">SIGN IN/ SIGN UP</button>
 		</div>
 	</header>
@@ -42,7 +42,6 @@
 				<!-- Sign Up Button & Forget Password -->
 				<div class="additional-options">
 					<button type="button" onclick="openSignUp()">Sign Up</button>
-					<a href="#" onclick="openForgetPassword()">Forget Password?</a>
 				</div>
 		</div>
 		<div class="sign_up" id="sign_up">

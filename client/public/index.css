@@ -55,7 +55,6 @@ button:hover {
 }
 
 /* about us */
-
 h2{
 	text-align: center;
 	font-size: 38px;
@@ -250,7 +249,7 @@ input[type="password"] {
 	padding-left: 40px;
 	font-size: 1.6em;
 	line-height: 1em;
-	color: var(--pop_up_background);
+	color: var(--text_color);
 	cursor: pointer;
 }
 

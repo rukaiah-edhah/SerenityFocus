@@ -55,11 +55,71 @@ function toggleTheme() {
 
 
 // Timer
+let minutesElement = document.getElementById('minutes');
+let secondsElement = document.getElementById('seconds');
+let totalSeconds = 0;
+let secondsRemaining;
+let countdownInterval;
+let paused = false;
 
-const minutes = document.querySelector('.minutes'); //interface
-const secounds = document.querySelector('.seconds');
+function addFive() {
+	if (totalSeconds < 3600) {  // 60 minutes in seconds
+		totalSeconds += 300; // 5 minutes in seconds
+		updateDisplay();
+	}
+}
 
-const start = document.querySelector('.btn-start'); //controls
-const add = document.getElementById('btn-plus');
-const subt = document.getElementById('btn-subt');
+function subFive() {
+	if (totalSeconds >= 300) {  // 5 minutes in seconds
+		totalSeconds -= 300; // 5 minutes in seconds
+		updateDisplay();
+	}
+}
 
+function startCountdown() {
+	if (!countdownInterval && totalSeconds > 0) {
+		secondsRemaining = totalSeconds;
+		countdownInterval = setInterval(updateCountdown, 1000);
+	}
+	paused = false;
+}
+
+function pauseCountdown() {
+	clearInterval(countdownInterval);
+	countdownInterval = null;
+	paused = true;
+}
+
+function resetCountdown() {
+	clearInterval(countdownInterval);
+	countdownInterval = null;
+	totalSeconds = 0;
+	paused = false;
+	updateDisplay();
+}
+
+function updateCountdown() {
+	if (!paused && secondsRemaining > 0) {
+		const minutes = Math.floor(secondsRemaining / 60);
+		const seconds = secondsRemaining % 60;
+
+		minutesElement.textContent = formatTime(minutes);
+		secondsElement.textContent = formatTime(seconds);
+		secondsRemaining--;
+	} else {
+		clearInterval(countdownInterval);
+		countdownInterval = null;
+	}
+}
+
+function updateDisplay() {
+	const minutes = Math.floor(totalSeconds / 60);
+	const seconds = totalSeconds % 60;
+
+	minutesElement.textContent = formatTime(minutes);
+	secondsElement.textContent = formatTime(seconds);
+}
+
+function formatTime(time) {
+	return time < 10 ? `0${time}` : time;
+}

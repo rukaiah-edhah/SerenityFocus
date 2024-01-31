@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Serenity Focus</title>
+        <link href="../output.css" rel="stylesheet">
+    </head>
+    <body>
+        <main class="flex min-h-screen flex-col items-center justify-between p-10 bg-orange-200">
+            <div class="mt-10">
+                <div class="relative flex flex-col mt-6 text-gray-700 bg-orange-300 shadow-md bg-clip-border rounded-xl w-96">
+                    <h1 class="text-center mt-5 text-3xl font-semibold">Sign Up</h1>
+                    <form method="post" action="/signup" class="p-12">
+                        <div class="mb-4">
+                            <label for="firstname" class="block text-gray-700 text-sm font-bold mb-2">First Name:</label>
+                            <input type="text" name="firstname" placeholder="Enter your first name" 
+                            id="firstname"
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                            required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="lastname" class="block text-gray-700 text-sm font-bold mb-2">Last Name:</label>
+                            <input type="text" name="lastname" placeholder="Enter your last name" 
+                            id="lastname"
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Username:</label>
+                            <input type="text" name="username" placeholder="Enter your username" 
+                            id="username"
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                            <input type="email" name="email" placeholder="Enter your email"
+                            id="password" 
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
+                            <input type="password" name="password" placeholder="Enter your password" 
+                            id="password"
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            required>
+                        </div>
+                        <input type="submit" class="bg-orange-800 hover:bg-orange-500 hover:cursor-pointer text-white font-bold py-2 px-4 rounded-full" value="Sign Up" />
+                        <div class="mt-14">
+                            Already have an account?
+                            <a href="/signin" class="bg-orange-800 hover:bg-orange-500 hover:cursor-pointer text-white font-medium py-1 px-4 rounded-full">
+                                Sign In
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

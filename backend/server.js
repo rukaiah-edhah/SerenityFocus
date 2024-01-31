@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const port = 8000;
+const port = 3000;
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
@@ -45,7 +45,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(router);
-app.use(express.static('client/public'));
+app.use(express.static('../client/public'));
 
 app.use('/api', api);
 

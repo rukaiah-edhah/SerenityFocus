@@ -20,9 +20,9 @@ const allRoutes = (req, res) => {
 }
 
 // USER AUTHENTICATION API
-router.post("/login", passport.authenticate('local', { failureRedirect: '/login-failure', successRedirect: 'login-success'}));
+router.post("/signin", passport.authenticate('local', { failureRedirect: '/login-failure', successRedirect: 'login-success'}));
 
-router.post("/register", (req, res) => {
+router.post("/signup", (req, res) => {
     const saltHash = genPassword(req.body.password);
 
     const salt = saltHash.salt;
@@ -31,8 +31,8 @@ router.post("/register", (req, res) => {
     const newUser = new Users({
         username: req.body.username,
         password: req.body.password,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
+        firstName: req.body.firstname,
+        lastName: req.body.lastname,
         email: req.body.email,
         hash: hash,
         salt: salt
@@ -42,10 +42,17 @@ router.post("/register", (req, res) => {
         .then((user) => {
             console.log(user);
         });
-
-    res.redirect('/login');
+    
+    res.redirect("/signin");
 });
 
+router.get("/signin", (req, res) => {
+    res.sendFile(path.join(__dirname, '../../client/public/sign/signin.html'))
+})
+
+router.get("/signup", (req, res) => {
+    res.sendFile(path.join(__dirname, '../../client/public/sign/signup.html'))
+})
 
 router.get("/logout", (req, res) => {
     req.logout();
@@ -53,12 +60,11 @@ router.get("/logout", (req, res) => {
 })
 
 router.get("/login-success", (req, res) => {
-    res.send("<p>You successfully logged in</p>")
-    res.redirect('/');
+    res.sendFile(path.join(__dirname, '../../client/public/account/login-success.html'))
 })
 
 router.get("/login-failure", (req, res) => {
-    res.send("<p>You have entered the wrong password</p>")
+    res.sendFile(path.join(__dirname, '../../client/public/account/login-failure.html'))
 })
 
 router.get("/protected-route", isAuth, (req, res) => {

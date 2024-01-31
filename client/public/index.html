@@ -92,17 +92,22 @@
 				<div class="semi-circle left-side circle-mask"></div>
 				<div class="semi-circle left-side circle"></div>
 			</div>
-			<div class="app-counter-box">
-				<span class="minutes">25</span>:<span class="seconds">00</span>
+			<div class="countdown">
+				<div id="minutes">00</div>
+				<div>:</div>
+				<div id="seconds">00</div>
 			</div>
 		</div>
 		<div class="controls">
-			<button id="btn-plus">+</button>
-			<button id="btn-subt">-</button>
-		</div>
-		<button class="btn-start">START</button>
-		<div>
-			<button id="sound"></button>
+			<div>
+				<button onclick="addFive()">+</button>
+				<button onclick="subFive()">-</button>
+			</div>
+			<div>
+				<button onclick="startCountdown()">Start</button>
+				<button onclick="pauseCountdown()">Pause</button>
+				<button onclick="resetCountdown()">Reset</button>
+			</div>
 		</div>
 	</main>
 	<footer>

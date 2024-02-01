@@ -28,16 +28,6 @@
 body {
 	background-color: var(--background)
 }
-main {
-  position: relative;
-	top:0px;
-	width: 300px;
-  height: 500px;
-  margin: 40px auto;
-  text-align: center;
-  border-radius: 1px;
-  padding: 20px;
-}
 
 button {
   position: relative;
@@ -219,6 +209,18 @@ input[type="password"] {
     font-size: 14px;
 }
 
+main {
+	border: 1px solid;
+  position: relative;
+	top:0px;
+	width: 300px;
+  height: 500px;
+  margin: 40px auto;
+  text-align: center;
+  border-radius: 1px;
+  padding: 20px;
+}
+
 #pomo {
 	font-size: 40px;
 	color: var(--text_color);
@@ -305,12 +307,19 @@ input[type="password"] {
 
 /*Circule*/
 
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .circle-container {
 	border-radius: 50%;
 	width: 400px;
 	height: 400px;
 	background-color: white;
 	position: absolute;
+	z-index: 1;
 }
 
 .semicircle {
@@ -319,7 +328,6 @@ input[type="password"] {
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 1;
 }
 
 .semicircle:nth-child(1) {
@@ -345,6 +353,7 @@ input[type="password"] {
 	border-radius: 50%;
 	z-index: 5;
 }
+
 /*timer*/
 .countdown {
 	position: relative;

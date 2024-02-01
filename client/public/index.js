@@ -52,8 +52,6 @@ function toggleTheme() {
 		body.classList.toggle('theme3');
 }
 
-
-
 // Timer
 let minutesElement = document.getElementById('minutes');
 let secondsElement = document.getElementById('seconds');
@@ -122,4 +120,22 @@ function updateDisplay() {
 
 function formatTime(time) {
 	return time < 10 ? `0${time}` : time;
+}
+
+//Circle
+const semicircles = document.querySelectorAll('.semicircle');
+
+function countDownTimer() {
+	const currentTimer = 10;
+	const angle = (currentTimer) * 360;
+
+	if(angle > 180) {
+		semicircles[2].style.display = 'none';
+		semicircles[0].style.transform = 'rotate(180deg)';
+		semicircles[1].style.transform = `rotate(${angle}deg)`;
+	} else {
+		semicircles[2].style.display = 'black';
+		semicircles[0].style.transform = `rotate(${angle}deg)`;
+		semicircles[1].style.transform = `rotate(${angle}deg)`;
+	}
 }

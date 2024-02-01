@@ -319,7 +319,7 @@ main {
 	height: 400px;
 	background-color: white;
 	position: absolute;
-	/* overflow: hidden; */
+	overflow: hidden;
 	z-index: 1;
 }
 
@@ -345,7 +345,7 @@ main {
 .semicircle:nth-child(3) {
 	background-color: white;
 	z-index: 4;
-	display: none;
+	/* display: none; */
 }
 
 .outermost-circle {
@@ -354,11 +354,11 @@ main {
 	background-color: black;
 	border-radius: 50%;
 	z-index: 5;
-	display: none;
+	/* display: none; */
 }
 
 /*Testing only*/
-
+/* 
 .main-container:hover .semicircle:nth-child(1) {
 	transform: rotate(180deg);
 	transition: 1s linear;
@@ -368,6 +368,11 @@ main {
 	transform: rotate(360deg);
 	transition: 2s linear;
 }
+
+.main-container:hover .semicircle:nth-child(3) {
+	opacity: 0;
+	transition: opacity 0s 1s;
+} */
 
 /*timer*/
 .countdown {

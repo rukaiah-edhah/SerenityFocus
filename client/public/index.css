@@ -219,7 +219,10 @@ input[type="password"] {
     font-size: 14px;
 }
 
-
+#pomo {
+	font-size: 40px;
+	color: var(--text_color);
+}
 /* tasks */
 
 

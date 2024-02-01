@@ -303,6 +303,48 @@ input[type="password"] {
 	opacity: 1;
 }
 
+/*Circule*/
+
+.circle-container {
+	border-radius: 50%;
+	width: 400px;
+	height: 400px;
+	background-color: white;
+	position: absolute;
+}
+
+.semicircle {
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.semicircle:nth-child(1) {
+	background-color: red;
+	z-index: 2;
+}
+
+.semicircle:nth-child(2) {
+	background-color: blue;
+	z-index: 3;
+}
+
+.semicircle:nth-child(3) {
+	background-color: white;
+	z-index: 4;
+	display: none;
+}
+
+.outermost-circle {
+	width: 390px;
+	height: 390px;
+	background-color: black;
+	border-radius: 50%;
+	z-index: 5;
+}
 /*timer*/
 .countdown {
 	position: relative;
@@ -318,70 +360,15 @@ input[type="password"] {
 	font-size: 50px;
 	color: var(--text_color);
 }
-/*Circule*/
 
-.app-circle {
-  position: relative;
-  margin: 0 auto;
-  width: 200px;
-  height: 200px;
-}
 
-.circle-shape {
-  pointer-events: none;
-}
 
-.semi-circle {
-  position: absolute;
-  width: 100px;
-  height: 200px;
-  box-sizing: border-box;
-  border: solid 6px;
-}
 
-.left-side {
-  top: 0;
-  left: 0;
-  transform-origin: right center;
-  transform: rotate(0deg);
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
-  border-right: none;
-}
-
- .right-side {
-  top: 0;
-  left: 100px;
-  transform-origin: left center;
-  transform: rotate(0 deg);
-  border-top-right-radius: 100px;
-  border-bottom-right-radius: 100px;
-  border-left: none;
-}
-
-.circle {
-  border-color: #bf5239;
-}
-
-.circle-mask {
-  border-color: #e85a71;
-}
-
-.app-counter-box {
-  font-size: 40px;
-	position:relative;
-  top: 80px;
-  color: var(--text_color);
-}
-
+/*controls*/
 .controls {
 	position: relative;
 	padding-bottom: 20px;
 	letter-spacing: 30px;
-}
-
-#subt {
-	font-size: 30px;
 }
 
 /* footer */

@@ -319,6 +319,7 @@ main {
 	height: 400px;
 	background-color: white;
 	position: absolute;
+	/* overflow: hidden; */
 	z-index: 1;
 }
 
@@ -328,6 +329,7 @@ main {
 	position: absolute;
 	top: 0;
 	left: 0;
+	transform-origin: right center;
 }
 
 .semicircle:nth-child(1) {
@@ -352,6 +354,19 @@ main {
 	background-color: black;
 	border-radius: 50%;
 	z-index: 5;
+	display: none;
+}
+
+/*Testing only*/
+
+.main-container:hover .semicircle:nth-child(1) {
+	transform: rotate(180deg);
+	transition: 1s linear;
+}
+
+.main-container:hover .semicircle:nth-child(2) {
+	transform: rotate(360deg);
+	transition: 2s linear;
 }
 
 /*timer*/

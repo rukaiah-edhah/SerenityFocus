@@ -159,3 +159,49 @@ function resetProgressRing() {
 	semicircles[0].style.transform = 'rotate(0deg)';
 	semicircles[1].style.transform = 'rotate(0deg)';
 }
+
+//tasks
+document.addEventListener('DOMContentLoaded', function () {
+	const addButton = document.getElementById('add');
+	const inputField = document.querySelector('.tasks input[type="text"]');
+	const taskContainer = document.querySelector('.tasks .field-group');
+
+	function addTask() {
+		const taskText = inputField.value.trim();
+		
+		if (taskText !== "") {
+			// Create new task element
+			const taskElement = document.createElement('div');
+			taskElement.classList.add('field-group');
+			
+			// Create checkbox and label
+			const checkbox = document.createElement('input');
+			checkbox.type = 'checkbox';
+			checkbox.name = 'checkbox';
+			checkbox.className = 'checkbox-field';
+			
+			const label = document.createElement('label');
+			label.className = 'checkbox-label';
+			label.textContent = taskText;
+			
+			// Append checkbox and label to the task element
+			taskElement.appendChild(checkbox);
+			taskElement.appendChild(label);
+			
+			// Append the task element to the task container
+			taskContainer.appendChild(taskElement);
+
+			// Clear the input field
+			inputField.value = '';
+		}
+	}
+
+	addButton.addEventListener('click', addTask);
+
+	inputField.addEventListener('keyup', function(event) {
+		// Check if the Enter key is pressed
+		if (event.key === 'Enter') {
+			addTask();
+		}
+	});
+});

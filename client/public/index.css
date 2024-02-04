@@ -111,7 +111,7 @@ h2{
 	visibility: visible;
 	top: 50%;
 	transform: translate(-50%, -50%) scale(1);
-	z-index: 8;
+	z-index: ;
 }
 
 /* Combined styles for sign-in and sign-up */
@@ -230,7 +230,6 @@ main {
 
 /* tasks */
 
-
 .tasks {
 	background: var(--tasks_background);
 	border-radius: 20px;
@@ -240,6 +239,7 @@ main {
 	width: 220px;
 	padding:10px 30px 30px;
 	color: var(--text_color);
+	margin-top: 20px;
 }
 .tasks input{
 	background: var(--input_background);
@@ -258,8 +258,9 @@ main {
 }
 
 .field-group {
-	width:200px;
-	padding:10px;
+	display: flex;
+	align-items: center;
+  margin-top: 10px;
 }
 
 .checkbox-field{

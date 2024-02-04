@@ -59,6 +59,7 @@ let totalSeconds = 0;
 let secondsRemaining;
 let countdownInterval;
 let paused = false;
+const initialTotalSeconds = 0; //fixed the one sec error
 
 function addFive() {
 	if (totalSeconds < 3600) {  // 60 minutes in seconds

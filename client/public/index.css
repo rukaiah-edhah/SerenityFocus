@@ -375,6 +375,9 @@ main {
 } */
 
 /*timer*/
+.timer {
+	z-index: 7;
+}
 .countdown {
 	position: relative;
 	display: flex;

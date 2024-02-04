@@ -62,14 +62,14 @@ let paused = false;
 const initialTotalSeconds = 0; //fixed the one sec error
 
 function addFive() {
-	if (totalSeconds < 3600) {  // 60 minutes in seconds
+	if (!paused && !countdownInterval && totalSeconds < 3600) {  // 60 minutes in seconds
 		totalSeconds += 10; // 5 minutes in seconds// change this later to 300
 		updateDisplay();
 	}
 }
 
 function subFive() {
-	if (totalSeconds >= 300) {  // 5 minutes in seconds
+	if (!paused && !countdownInterval && totalSeconds >= 300) {  // 5 minutes in seconds
 		totalSeconds -= 300; // 5 minutes in seconds
 		updateDisplay();
 	}
@@ -152,4 +152,10 @@ function updateProgressRing() {
 		semicircles[0].style.transform = `rotate(${angle}deg)`;
 		semicircles[1].style.transform = 'rotate(0deg)';
 	}
+}
+
+function resetProgressRing() {
+	semicircles[2].style.display = 'block';
+	semicircles[0].style.transform = 'rotate(0deg)';
+	semicircles[1].style.transform = 'rotate(0deg)';
 }

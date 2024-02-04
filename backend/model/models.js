@@ -109,13 +109,17 @@ const pomodoroSessionSchema = new mongoose.Schema({
         index: true,
         required: true 
     },
+    // Added a taskId field to link each session to a specific task
+    taskId: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Tasks',  
+    },
     startTime: { 
         type: Date,
         required: true
     },
     endTime: { 
         type: Date,
-        required: false // I don't think we can know it when the session starts since the user will have the option to add more time so I will leave it false unless we decided to change that
     },
     defaultDuration: { 
         type: Number,
@@ -127,7 +131,12 @@ const pomodoroSessionSchema = new mongoose.Schema({
     sessionType: { 
         type: String,
         enum: ['session', 'break']
-    }
+    },
+    // Added an upticks array to track when the user adds time to a session
+    upticks: [{
+        addedTime: Number, 
+        uptickTime: Date, 
+    }]
 }, { timestamps: true });
 
 const Tasks = mongoose.model("Tasks", taskSchema);

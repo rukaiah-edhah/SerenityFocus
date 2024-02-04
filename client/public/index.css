@@ -111,7 +111,7 @@ h2{
 	visibility: visible;
 	top: 50%;
 	transform: translate(-50%, -50%) scale(1);
-	z-index: 1;
+	z-index: 8;
 }
 
 /* Combined styles for sign-in and sign-up */
@@ -133,7 +133,7 @@ h2{
     visibility: visible;
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
-    z-index: 1;
+    z-index: 8;
 }
 
 input[type="text"],
@@ -210,7 +210,6 @@ input[type="password"] {
 }
 
 main {
-	border: 1px solid;
   position: relative;
 	top:0px;
 	width: 300px;
@@ -222,9 +221,13 @@ main {
 }
 
 #pomo {
+	position: relative;
+	top: 30px;
 	font-size: 40px;
 	color: var(--text_color);
+	z-index: 7;
 }
+
 /* tasks */
 
 
@@ -345,7 +348,6 @@ main {
 .semicircle:nth-child(3) {
 	background-color: white;
 	z-index: 4;
-	/* display: none; */
 }
 
 .outermost-circle {
@@ -354,49 +356,24 @@ main {
 	background-color: var(--background);
 	border-radius: 50%;
 	z-index: 5;
-	/* display: none; */
 }
-
-/*Testing only*/
-/* 
-.main-container:hover .semicircle:nth-child(1) {
-	transform: rotate(180deg);
-	transition: 1s linear;
-}
-
-.main-container:hover .semicircle:nth-child(2) {
-	transform: rotate(360deg);
-	transition: 2s linear;
-}
-
-.main-container:hover .semicircle:nth-child(3) {
-	opacity: 0;
-	transition: opacity 0s 1s;
-} */
 
 /*timer*/
 .timer {
 	z-index: 7;
 }
 .countdown {
-	position: relative;
 	display: flex;
-	align-content: center;
-	width: fit-content;
-	left: 20%;
-	top:33%;
 }
 
 .countdown div {
 	position: relative;
-	font-size: 50px;
+	font-size: 100px;
 	color: var(--text_color);
 }
 
-
-
-
 /*controls*/
+
 .controls {
 	position: relative;
 	padding-bottom: 20px;

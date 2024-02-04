@@ -63,7 +63,7 @@ const initialTotalSeconds = 0; //fixed the one sec error
 
 function addFive() {
 	if (totalSeconds < 3600) {  // 60 minutes in seconds
-		totalSeconds += 300; // 5 minutes in seconds
+		totalSeconds += 10; // 5 minutes in seconds// change this later to 300
 		updateDisplay();
 	}
 }
@@ -84,9 +84,16 @@ function startCountdown() {
 }
 
 function pauseCountdown() {
-	clearInterval(countdownInterval);
-	countdownInterval = null;
-	paused = true;
+	if (countdownInterval) {
+		clearInterval(countdownInterval);
+		countdownInterval = null;
+		paused = true;
+	} else {
+		if (secondsRemaining > 0) {
+			countdownInterval = setInterval(updateCountdown, 1000);
+			paused = false;
+		}
+	}
 }
 
 function resetCountdown() {
@@ -95,6 +102,7 @@ function resetCountdown() {
 	totalSeconds = 0;
 	paused = false;
 	updateDisplay();
+	resetProgressRing();
 }
 
 function updateCountdown() {
@@ -104,10 +112,17 @@ function updateCountdown() {
 
 		minutesElement.textContent = formatTime(minutes);
 		secondsElement.textContent = formatTime(seconds);
+		
+		updateProgressRing();
+
 		secondsRemaining--;
+
 	} else {
+		minutesElement.textContent = '00';
+		secondsElement.textContent = '00';
 		clearInterval(countdownInterval);
 		countdownInterval = null;
+		updateProgressRing();
 	}
 }
 
@@ -126,17 +141,15 @@ function formatTime(time) {
 //Circle
 const semicircles = document.querySelectorAll('.semicircle');
 
-function countDownTimer() {
-	const currentTimer = 10;
-	const angle = (currentTimer) * 360;
+function updateProgressRing() {
+	const currentTimer = secondsRemaining;
+	const angle = ((totalSeconds - currentTimer) / totalSeconds) * 360;
 
-	if(angle > 180) {
-		semicircles[2].style.display = 'none';
+	if (angle >= 180) {
 		semicircles[0].style.transform = 'rotate(180deg)';
-		semicircles[1].style.transform = `rotate(${angle}deg)`;
+		semicircles[1].style.transform = `rotate(${angle - 180}deg)`;
 	} else {
-		semicircles[2].style.display = 'black';
 		semicircles[0].style.transform = `rotate(${angle}deg)`;
-		semicircles[1].style.transform = `rotate(${angle}deg)`;
+		semicircles[1].style.transform = 'rotate(0deg)';
 	}
 }

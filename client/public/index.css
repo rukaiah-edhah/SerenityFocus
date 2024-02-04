@@ -351,7 +351,7 @@ main {
 .outermost-circle {
 	width: 390px;
 	height: 390px;
-	background-color: black;
+	background-color: var(--background);
 	border-radius: 50%;
 	z-index: 5;
 	/* display: none; */

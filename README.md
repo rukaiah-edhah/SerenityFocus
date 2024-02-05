@@ -36,4 +36,4 @@ For further information about our project, feel free to connect with any of our 
 
 ## Documentation
 
-For detailed documentation on our backend system, including database schemas, authentication mechanisms, and API endpoints, please refer to our [Backend Documentation](./backend/docs/table_of_content). 
+For detailed documentation on our backend system, including database schemas, authentication mechanisms, and API endpoints, please refer to our [Backend Documentation](./backend/docs/table_of_content.md). 

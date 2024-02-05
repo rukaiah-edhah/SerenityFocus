@@ -111,7 +111,7 @@ h2{
 	visibility: visible;
 	top: 50%;
 	transform: translate(-50%, -50%) scale(1);
-	z-index: ;
+	z-index: 8;
 }
 
 /* Combined styles for sign-in and sign-up */
@@ -240,12 +240,16 @@ main {
 	padding:10px 30px 30px;
 	color: var(--text_color);
 	margin-top: 20px;
+	overflow: auto;
+	white-space: nowrap;
 }
 .tasks input{
 	background: var(--input_background);
 	border-radius: 50px;
 	padding: 1rem 2rem;
 }
+
+
 
 #add {
 	background: var(--tasks_background);
@@ -258,9 +262,10 @@ main {
 }
 
 .field-group {
-	display: flex;
-	align-items: center;
+	display: inline-block;
+	vertical-align: top;
   margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .checkbox-field{
@@ -274,6 +279,7 @@ main {
 	line-height: 1em;
 	color: var(--text_color);
 	cursor: pointer;
+	margin-left: 8px;
 }
 
 .checkbox-label::before{
@@ -308,6 +314,15 @@ main {
 	transform:rotate(35deg) scale(1);
 	opacity: 1;
 }
+
+.tasks .field-group {
+  flex-direction: column;
+}
+
+.tasks .field-group input[type="checkbox"] {
+  order: 2;
+}
+
 
 /*Circule*/
 

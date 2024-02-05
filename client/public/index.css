@@ -153,7 +153,7 @@ input[type="password"] {
     color: var(--text_color);
 }
 
-#sign_in_btn, #sign_up_btn {
+#sign_in_btn, #signup_submit {
     width: 100%;
     margin-top: 50px;
     padding: 10px 0;

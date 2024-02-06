@@ -13,7 +13,8 @@
 		<div class="nav_bar">
 			<button type="submit" class="btn" onclick="openPopup()">ABOUT US</button>
 			<button type="themes" id="toggleButton" class="btn" >THEMES</button>
-			<button type="sign_in_sign_up" class="btn" onclick="openSignIn()">SIGN IN/ SIGN UP</button>
+			<button type="sign_in_sign_up" class="btn" onclick="openSignIn()">SIGN IN</button>
+			<a href="/signup" class="btn">SIGN UP</a>
 		</div>
 	</header>
 		<div class="about" id="about">
@@ -29,50 +30,21 @@
 		</div>
 		<div class="sign_in" id="sign_in">
 			<h2>Sign In</h2>
-			<form>
+			<form method="post">
 				<div>
-					<label for="signin_email">Email:</label>
-					<input type="email" name="signin_email" placeholder="Enter your email">
+					<label for="username">Email:</label>
+					<input type="text" name="username" placeholder="Enter your email">
 				</div>
 				<div>
-					<label for="signin_password">Password:</label>
-					<input type="password" name="signin_password" placeholder="Enter your password">
+					<label for="password">Password:</label>
+					<input type="password" name="password" placeholder="Enter your password">
 				</div>
-				<button type="button" id="sign_in_btn" onclick="closeSignIn()">Sign In</button>
+				<button type="submit" id="sign_in_btn">Sign In</button>
 				<!-- Sign Up Button & Forget Password -->
 				<div class="additional-options">
-					<button type="button" onclick="openSignUp()">Sign Up</button>
+					<button type="button" onclick="">Sign Up</button>
 				</div>
 			<form>
-		</div>
-		<div class="sign_up" id="sign_up">
-			<h2>Sign Up</h2>
-			<form id="signup-form">
-				<div>
-					<label for="signup_first_name">First Name:</label>
-					<input type="text" id="signup_first_name" name="first_name" placeholder="Enter your first name">
-				</div>
-				<div>
-					<label for="signup_last_name">Last Name:</label>
-					<input type="text" id="signup_last_name" name="last_name" placeholder="Enter your last name">
-				</div>
-				<div>
-					<label for="signup_username">Username:</label>
-					<input type="text" id="signup_username" name="username" placeholder="Enter your username">
-				</div>
-				<div>
-					<label for="signup_email">Email:</label>
-					<input type="email" id="signup_email" name="email" placeholder="Enter your email">
-				</div>
-				<div>
-					<label for="signup_password">Password:</label>
-					<input type="password" id="signup_password" name="password" placeholder="Enter your password">
-				</div>
-				<button type="submit" id="signup_submit">Sign Up</button>
-			</form>
-			<div class="additional-options">
-				<button type="button" onclick="goBack()">Go Back</button>
-			</div>
 		</div>
 	<div id="pomo" class="center">Pomodoro</div>
 	<main>

@@ -20,7 +20,7 @@ const allRoutes = (req, res) => {
 }
 
 // USER AUTHENTICATION API
-router.post("/signin", passport.authenticate('local', { failureRedirect: '/login-failure', successRedirect: 'login-success'}));
+router.post("/", passport.authenticate('local', { failureRedirect: '/login-failure', successRedirect: 'login-success'}));
 
 router.post("/signup", (req, res) => {
     const saltHash = genPassword(req.body.password);
@@ -43,12 +43,8 @@ router.post("/signup", (req, res) => {
             console.log(user);
         });
     
-    res.redirect("/signin");
+    res.redirect("/");
 });
-
-router.get("/signin", (req, res) => {
-    res.sendFile(path.join(__dirname, '../../client/public/sign/signin.html'))
-})
 
 router.get("/signup", (req, res) => {
     res.sendFile(path.join(__dirname, '../../client/public/sign/signup.html'))

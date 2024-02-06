@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Serenity Focus</title>
-	<link rel="stylesheet" href="./reset.css">
-	<link rel="stylesheet" href="./index.css">
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Serenity Focus</title>
+		<link rel="stylesheet" href="./reset.css">
+		<link rel="stylesheet" href="./index.css">
+	</head>
 
-<body class="theme1">
-	<header>
-		<div class="nav_bar">
-			<button type="submit" class="btn" onclick="openPopup()">ABOUT US</button>
-			<button type="themes" id="toggleButton" class="btn" >THEMES</button>
-			<button type="sign_in_sign_up" class="btn" onclick="openSignIn()">SIGN IN</button>
-			<a href="/signup" class="btn">SIGN UP</a>
-		</div>
-	</header>
+	<body class="theme1">
+		<header>
+			<div class="nav_bar">
+				<button type="submit" class="btn" onclick="openPopup()">ABOUT US</button>
+				<button type="themes" id="toggleButton" class="btn" >THEMES</button>
+				<button type="sign_in_sign_up" class="btn" onclick="openSignIn()">SIGN IN</button>
+			</div>
+		</header>
 		<div class="about" id="about">
 			<img src="./images/Shevan.jpg" alt="picture of Shevan">
 			<img src="./images/Rukaiah.jpg" alt="picture of Rukaiah">
@@ -39,53 +38,56 @@
 					<label for="password">Password:</label>
 					<input type="password" name="password" placeholder="Enter your password">
 				</div>
-				<button type="submit" id="sign_in_btn">Sign In</button>
-				<!-- Sign Up Button & Forget Password -->
-				<div class="additional-options">
-					<button type="button" onclick="">Sign Up</button>
-				</div>
+				<input type="submit" id="sign_in_btn" value="Sign In" />
 			<form>
-		</div>
-	<div id="pomo" class="center">Pomodoro</div>
-	<main>
-		<div class="tasks">
-			<div>
-				<input type="text" placeholder="Write your task">
-				<button id="add">Add</button>
+			<!-- Sign Up Button & Forget Password -->
+			<div class="additional-options">
+				<button type="button"><a href="/signup">Sign Up</a></button>
 			</div>
-			<div class="field-group">
-				<input type="checkbox" name="checkbox" id="test" class="checkbox-field">
-				<label for="test" class="checkbox-label">Test</label>
+			<div class="additional-options">
+				<button type="button" onclick="closeSignIn()">Close</button>
 			</div>
 		</div>
-		<div class="main-container center">
-			<div class="circle-container center">
-				<div class="semicircle"></div>
-				<div class="semicircle"></div>
-				<div class="semicircle"></div>
-				<div class="outermost-circle"></div>
+		<div id="pomo" class="center">Pomodoro</div>
+		<main>
+			<div class="tasks">
+				<div>
+					<input type="text" placeholder="Write your task">
+					<button id="add">Add</button>
+				</div>
+				<div class="field-group">
+					<input type="checkbox" name="checkbox" id="test" class="checkbox-field">
+					<label for="test" class="checkbox-label">Test</label>
+				</div>
 			</div>
-			<div class="countdown timer .center">
-				<div id="minutes">00</div>
-				<div>:</div>
-				<div id="seconds">00</div>
+			<div class="main-container center">
+				<div class="circle-container center">
+					<div class="semicircle"></div>
+					<div class="semicircle"></div>
+					<div class="semicircle"></div>
+					<div class="outermost-circle"></div>
+				</div>
+				<div class="countdown timer .center">
+					<div id="minutes">00</div>
+					<div>:</div>
+					<div id="seconds">00</div>
+				</div>
 			</div>
-		</div>
-		<div class="controls timer">
-			<div>
-				<button onclick="addFive()">+5</button>
-				<button onclick="subFive()">-5</button>
+			<div class="controls timer">
+				<div>
+					<button onclick="addFive()">+5</button>
+					<button onclick="subFive()">-5</button>
+				</div>
+				<div>
+					<button onclick="startCountdown()">Start</button>
+					<button onclick="pauseCountdown()">Pause</button>
+					<button onclick="resetCountdown()">Reset</button>
+				</div>
 			</div>
-			<div>
-				<button onclick="startCountdown()">Start</button>
-				<button onclick="pauseCountdown()">Pause</button>
-				<button onclick="resetCountdown()">Reset</button>
-			</div>
-		</div>
-	</main>
-	<footer>
-		<p>&#169; Productivity Nerds</p>
-	</footer>
-	<script src="./index.js"></script>
-</body>
+		</main>
+		<footer>
+			<p>&#169; Productivity Nerds</p>
+		</footer>
+		<script src="./index.js"></script>
+	</body>
 </html>

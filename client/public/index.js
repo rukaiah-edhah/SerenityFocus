@@ -3,7 +3,6 @@
 let popup = document.getElementById("about")
 
 function openPopup() {
-    closeSignUp();
     closeSignIn();
     popup.classList.add("open-popup");
 }
@@ -12,22 +11,19 @@ function closePopup() {
     popup.classList.remove("open-popup");
 }
 
-let signUp = document.getElementById("sign_up");
 let signIn = document.getElementById("sign_in");
 
 
-
 function openSignIn() {
-    closePopup();
+    // closePopup();
     signIn.classList.add("open-sign_in");  
 }
 
 function closeSignIn() {
-    signIn.classList.remove("open-sign_in");  
+	signIn.classList.remove("open-sign_in");  
 }
 
 function goBack() {
-    closeSignUp();  
     openSignIn();  
 }
 

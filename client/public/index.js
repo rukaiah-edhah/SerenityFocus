@@ -15,7 +15,7 @@ let signIn = document.getElementById("sign_in");
 
 
 function openSignIn() {
-    // closePopup();
+    closePopup();
     signIn.classList.add("open-sign_in");  
 }
 

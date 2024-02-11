@@ -127,24 +127,33 @@ function formatTime(time) {
 //Circle
 const semicircles = document.querySelectorAll('.semicircle');
 
+const timerLoop = setInterval(updateProgressRing);
+updateProgressRing();
+
 function updateProgressRing() {
 	const currentTimer = secondsRemaining;
-	const angle = ((totalSeconds - currentTimer) / totalSeconds) * 360;
+	const angle = (currentTimer / totalSeconds) * 360;
 
-	if (angle >= 180) {
+	if (angle > 180) {
+		semicircles[2].style.display = 'none';
 		semicircles[0].style.transform = 'rotate(180deg)';
-		semicircles[1].style.transform = `rotate(${angle - 180}deg)`;
+		semicircles[1].style.transform = `rotate(${angle}deg)`;
 	} else {
+		semicircles[2].style.display = 'block';
 		semicircles[0].style.transform = `rotate(${angle}deg)`;
-		semicircles[1].style.transform = 'rotate(0deg)';
+		semicircles[1].style.transform = `rotate(${angle}deg)`;
+	}
+
+	//end
+	if(currentTimer < 1) {
+		clearInterval(timerLoop);
+		semicircles[0].style.display = 'none';
+		semicircles[1].style.display = 'none';
+		semicircles[2].style.display = 'none';
 	}
 }
 
-function resetProgressRing() {
-	semicircles[2].style.display = 'block';
-	semicircles[0].style.transform = 'rotate(0deg)';
-	semicircles[1].style.transform = 'rotate(0deg)';
-}
+
 
 //tasks
 document.addEventListener('DOMContentLoaded', function () {
@@ -159,14 +168,13 @@ document.addEventListener('DOMContentLoaded', function () {
 			const taskText = taskInput.textContent.trim();
 			
 			if (taskText !== "") {
-					// Create new task element
 					const taskElement = document.createElement('div');
 					taskElement.classList.add('field-group');
 					
 					// Create checkbox and label
 					const checkbox = document.createElement('input');
 					checkbox.type = 'checkbox';
-					checkbox.name = existingCheckbox.name; // Use the same name attribute
+					checkbox.name = existingCheckbox.name; 
 					checkbox.id = 'test' + (taskContainer.children.length - 1); // Increment the ID to ensure uniqueness
 					checkbox.className = 'checkbox-field';
 					

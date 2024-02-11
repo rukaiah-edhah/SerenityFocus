@@ -352,6 +352,7 @@ main {
 	width: 400px;
 	height: 400px;
 	background-color: white;
+	background-color: #ddd;
 	position: absolute;
 	overflow: hidden;
 	z-index: 1;
@@ -368,17 +369,21 @@ main {
 
 .semicircle:nth-child(1) {
 	background-color: red;
+	background-color: #088b8b;
 	z-index: 2;
 }
 
 .semicircle:nth-child(2) {
 	background-color: blue;
+	background-color: #088b8b;
 	z-index: 3;
 }
 
 .semicircle:nth-child(3) {
 	background-color: white;
+	background-color: #ddd;
 	z-index: 4;
+	display: none;
 }
 
 .outermost-circle {

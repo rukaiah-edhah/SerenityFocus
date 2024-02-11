@@ -36,7 +36,6 @@ function toggleTheme() {
 	const body = document.body;
     body.classList.toggle('theme1');
     body.classList.toggle('theme2');
-		body.classList.toggle('theme3');
 }
 
 // Timer
@@ -150,47 +149,47 @@ function resetProgressRing() {
 //tasks
 document.addEventListener('DOMContentLoaded', function () {
 	const addButton = document.getElementById('add');
-	const inputField = document.querySelector('.tasks input[type="text"]');
+	const taskInput = document.getElementById('taskInput');
 	const taskContainer = document.querySelector('.tasks .field-group');
 
 	function addTask() {
-		const taskText = inputField.value.trim();
-		
-		if (taskText !== "") {
-			// Create new task element
-			const taskElement = document.createElement('div');
-			taskElement.classList.add('field-group');
+			const taskText = taskInput.textContent.trim();
 			
-			// Create checkbox and label
-			const checkbox = document.createElement('input');
-			checkbox.type = 'checkbox';
-			checkbox.name = 'checkbox';
-			checkbox.id = 'test1'
-			checkbox.className = 'checkbox-field';
-			
-			const label = document.createElement('label');
-			label.className = 'checkbox-label';
-			label.textContent = taskText;
-			label.for = 'test1'
-			
-			// Append checkbox and label to the task element
-			taskElement.appendChild(checkbox);
-			taskElement.appendChild(label);
-			
-			// Append the task element to the task container
-			taskContainer.appendChild(taskElement);
+			if (taskText !== "") {
+					// Create new task element
+					const taskElement = document.createElement('div');
+					taskElement.classList.add('field-group');
+					
+					// Create checkbox and label
+					const checkbox = document.createElement('input');
+					checkbox.type = 'checkbox';
+					checkbox.name = 'checkbox';
+					checkbox.id = 'test1';
+					checkbox.className = 'checkbox-field';
+					
+					const label = document.createElement('label');
+					label.className = 'checkbox-label';
+					label.textContent = taskText;
+					label.for = 'test1';
+					
+					// Append checkbox and label to the task element
+					taskElement.appendChild(checkbox);
+					taskElement.appendChild(label);
+					
+					// Append the task element to the task container
+					taskContainer.appendChild(taskElement);
 
-			// Clear the input field
-			inputField.value = '';
-		}
+					// Clear the input field
+					taskInput.textContent = '';
+			}
 	}
 
 	addButton.addEventListener('click', addTask);
 
-	inputField.addEventListener('keyup', function(event) {
-		// Check if the Enter key is pressed
-		if (event.key === 'Enter') {
-			addTask();
-		}
+	taskInput.addEventListener('keypress', function(event) {
+			if (event.key === 'Enter') {
+					event.preventDefault(); // Prevent line break
+					addTask();
+			}
 	});
 });

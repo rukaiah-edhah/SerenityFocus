@@ -280,10 +280,10 @@ main {
 	max-height: 300px;
 	overflow:auto;
 }
+
 .field-group {
 	display: flex;
 	flex-direction: column;
-	vertical-align: top;
   margin-top: 6px;
 }
 
@@ -293,8 +293,9 @@ main {
 
 .checkbox-label{
 	position:relative;
-	padding-left: 1px;
-	font-size: 1.6em;
+	align-self:baseline;
+	padding-left: 50px;
+	font-size: 1.5em;
 	line-height: 1em;
 	color: var(--text_color);
 	cursor: pointer;

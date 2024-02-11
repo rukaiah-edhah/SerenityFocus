@@ -151,6 +151,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	const addButton = document.getElementById('add');
 	const taskInput = document.getElementById('taskInput');
 	const taskContainer = document.querySelector('.tasks .field-group');
+	const existingCheckbox = document.querySelector('.tasks .field-group .checkbox-field');
+
+	taskContainer.innerHTML = '';
 
 	function addTask() {
 			const taskText = taskInput.textContent.trim();
@@ -163,14 +166,14 @@ document.addEventListener('DOMContentLoaded', function () {
 					// Create checkbox and label
 					const checkbox = document.createElement('input');
 					checkbox.type = 'checkbox';
-					checkbox.name = 'checkbox';
-					checkbox.id = 'test1';
+					checkbox.name = existingCheckbox.name; // Use the same name attribute
+					checkbox.id = 'test' + (taskContainer.children.length - 1); // Increment the ID to ensure uniqueness
 					checkbox.className = 'checkbox-field';
 					
 					const label = document.createElement('label');
 					label.className = 'checkbox-label';
 					label.textContent = taskText;
-					label.for = 'test1';
+					label.htmlFor = checkbox.id; // Use the checkbox's ID for the label's htmlFor attribute
 					
 					// Append checkbox and label to the task element
 					taskElement.appendChild(checkbox);
@@ -187,6 +190,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	addButton.addEventListener('click', addTask);
 
 	taskInput.addEventListener('keypress', function(event) {
+			// Check if the Enter key is pressed
 			if (event.key === 'Enter') {
 					event.preventDefault(); // Prevent line break
 					addTask();

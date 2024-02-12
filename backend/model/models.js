@@ -55,8 +55,21 @@ mongoose.connect(process.env.MODE === "prod" ? process.env.PROD : process.env.DE
                 message: 'Password must be at least 8 characters long, including at least one letter, one number, and one special character.'
             }
         },
-        salt: String,
-        hash: String,
+        salt: {
+            type: String,
+        },
+        hash: {
+            type: String,
+        },
+        // Future Data Points
+        timeZone: { // To support localized notifications and reminders
+            type: String,
+            required: false, // Optional to start, can be updated post-registration
+        },
+        preferredLanguage: { // For customizing app language
+            type: String,
+            required: false,
+        },
     }, { timestamps: true });
 
 
@@ -99,7 +112,16 @@ const taskSchema = new mongoose.Schema({
         type: String,
         enum: ['pending', 'completed'],
         default: 'pending'
-    }
+    },
+    // Future Data Points
+    category: [{ // To allow categorization and filtering of tasks
+        type: String,
+        required: false,
+    }],
+    isRecurring: { // To manage recurring tasks without user needing to re-enter them
+        type: Boolean,
+        default: false,
+    },
 }, { timestamps: true });
 
 const pomodoroSessionSchema = new mongoose.Schema({
@@ -108,11 +130,6 @@ const pomodoroSessionSchema = new mongoose.Schema({
         ref: 'Users',
         index: true,
         required: true 
-    },
-    // Added a taskId field to link each session to a specific task
-    taskId: { 
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Tasks',  
     },
     startTime: { 
         type: Date,
@@ -133,8 +150,12 @@ const pomodoroSessionSchema = new mongoose.Schema({
         type: String,
         enum: ['session', 'break']
     },
-    // Added an upticks array to track when the user adds time to a session
-    upticks: [{
+    // Future Data Points
+    taskId: { // To link each session to a specific task
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Tasks',  
+    },
+    upticks: [{ // To track when the user adds time to a session
         addedTime: Number, 
         uptickTime: Date, 
     }]

@@ -32,7 +32,7 @@ mongoose.connect(process.env.MODE === "prod" ? process.env.PROD : process.env.DE
             required: [true, 'Last name is required'],
             trim: true,
             minlength: [2, 'Last name must be at least 2 characters long'],
-            match: [nameValidationRegex, 'First name contains invalid characters'],
+            match: [nameValidationRegex, 'Last name contains invalid characters'],
         },
         email: {
             type: String,
@@ -71,15 +71,16 @@ mongoose.connect(process.env.MODE === "prod" ? process.env.PROD : process.env.DE
                     return timeZoneValidationRegex.test(v);
                 },
                 message: props => `${props.value} is not a valid time zone identifier!`
+            },
         },
         preferredLanguage: { // For customizing app language
             type: String,
             required: false,
         },
-    }, { timestamps: true });
+    }, {timestamps: true });
 
 
-    // Pre-save hook to hash the password
+// Pre-save hook to hash the password
 userSchema.pre('save', function(next) {
     // Only hash the password if it has been modified (or is new)
     if (!this.isModified('password')) return next();
@@ -166,7 +167,7 @@ const pomodoroSessionSchema = new mongoose.Schema({
     // Future Data Points
     taskId: { // To link each session to a specific task
         type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Tasks',  
+        ref: "Tasks",  
     },
     upticks: [{ // To track when the user adds time to a session
         addedTime: Number, 

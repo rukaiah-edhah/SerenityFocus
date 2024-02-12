@@ -74,18 +74,19 @@ h2{
 	font-size: 38px;
 	font-weight: 500;
 	margin: 30px 0 10px;
+	margin-bottom: 20px;
 	background: none;
 }
 
 .about{
-	width: 280px;
+	width: 300px; /* Adjusted to match the sign_in popup */
 	background: var(--pop_up_background);
 	border-radius: 30px;
 	position: absolute;
 	top: 1;
 	left: 50%;
 	transform: translate(-50%, -50%) scale(0.1);
-	padding:0 30px 30px;
+	padding: 20px 30px 30px; /* Adjust padding to match sign_in popup */
 	color:var(--text_color) ;
 	visibility: hidden;
 	transition: transform 0.4s, top 0.4s;
@@ -94,6 +95,7 @@ h2{
 .about p{
 	background-color: var(--pop_up_background);
 	font-size: larger;
+	line-height: 1.2;
 }
 
 .about img{
@@ -437,4 +439,3 @@ display:flex;
 justify-content: center;
 color: var(--text_color);
 }
-

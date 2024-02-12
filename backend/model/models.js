@@ -129,6 +129,10 @@ const taskSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
+    dueDate: {
+        type: Date,
+        required: false, 
+    },
 }, { timestamps: true });
 
 const pomodoroSessionSchema = new mongoose.Schema({

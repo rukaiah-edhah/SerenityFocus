@@ -39,7 +39,18 @@ This document provides detailed descriptions of each collection in the database,
 - **Type**: String
 - **Description**: The resulting hash from the bcrypt hashing of the user's password.
 
-The `Users` collection is central to user management and authentication processes within the application.
+### Future Data Points
+
+**timeZone**:
+  - **Type**: String
+  - **Description**: User's local time zone for localized notifications/reminders.
+  - **Constraints**: Optional, valid time zone format.
+
+**preferredLanguage**:
+  - **Type**: String
+  - **Description**: Language preference for app localization.
+  - **Constraints**: Optional.
+
 
 ## Tasks Collection
 
@@ -60,7 +71,20 @@ The `Users` collection is central to user management and authentication processe
 - **Description**: The current status of the task indicating whether it is pending or has been completed.
 - **Constraints**: Defaults to 'pending'.
 
-The `Tasks` collection holds data related to individual tasks that users create. The relationship to the `Users` collection allows for tracking and analysis of tasks on a per-user basis.
+### Future Data Points
+
+**category**:
+  - **Type**: Array of Strings
+  - **Description**: Categories/tags for task organization.
+  - **Constraints**: Optional, predefined categories ['Work', 'Personal', 'Health'].
+
+**isRecurring**:
+  - **Type**: Boolean
+  - **Description**: Indicates if a task is recurring.
+
+**dueDate**:
+  - **Type**: Date
+  - **Description**: The deadline for task completion.
 
 ## PomodoroSessions Collection
 
@@ -94,4 +118,12 @@ The `Tasks` collection holds data related to individual tasks that users create.
 - **Type**: String, Enum ['session', 'break']
 - **Description**: The type of Pomodoro session, which can be a focused work session or a break.
 
-The `PomodoroSessions` collection is used to track the Pomodoro technique sessions of users, enabling productivity analysis.
+### Future Data Points
+
+**taskId**:
+  - **Type**: ObjectId, references `Tasks`
+  - **Description**: Links session to a specific task.
+
+**upticks**:
+  - **Type**: Array of objects { addedTime: Number, uptickTime: Date }
+  - **Description**: Tracks when time is added to a session.

@@ -20,30 +20,37 @@ const allRoutes = (req, res) => {
 }
 
 // USER AUTHENTICATION API
-router.post("/", passport.authenticate('local', { failureRedirect: '/login-failure', successRedirect: 'login-success'}));
+router.post("/", passport.authenticate('local', { failureRedirect: "/login-failure", successRedirect: 'login-success'}));
 
-router.post("/signup", (req, res) => {
-    const saltHash = genPassword(req.body.password);
+router.post("/signup", async (req, res) => {
+        const existingUser = await Users.findOne({ username: req.body.username});
+        if (existingUser){
+            return res.redirect("/exists")
+        }
 
-    const salt = saltHash.salt;
-    const hash = saltHash.hash;
+        const saltHash = genPassword(req.body.password);
 
-    const newUser = new Users({
-        username: req.body.username,
-        password: req.body.password,
-        firstName: req.body.firstname,
-        lastName: req.body.lastname,
-        email: req.body.email,
-        hash: hash,
-        salt: salt
-    })
+        const salt = saltHash.salt;
+        const hash = saltHash.hash;
 
-    newUser.save()
-        .then((user) => {
-            console.log(user);
-        });
-    
-    res.redirect("/");
+        const newUser = new Users({
+            username: req.body.username,
+            password: req.body.password,
+            firstName: req.body.firstname,
+            lastName: req.body.lastname,
+            email: req.body.email,
+            hash: hash,
+            salt: salt
+        })
+
+
+        newUser.save()
+            .then((user) => {
+                console.log(user);
+            });
+        
+        
+        res.redirect("/");
 });
 
 router.get("/signup", (req, res) => {
@@ -57,6 +64,10 @@ router.get("/logout", (req, res) => {
 
 router.get("/login-success", (req, res) => {
     res.sendFile(path.join(__dirname, '../../client/public/account/login-success.html'))
+})
+
+router.get("/exists", (req, res) => {
+    res.sendFile(path.join(__dirname, '../../client/public/account/form_exists.html'))
 })
 
 router.get("/login-failure", (req, res) => {

@@ -104,6 +104,20 @@ h2{
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 10);
 }
 
+.about a {
+    text-decoration: none;
+}
+
+.about a img {
+    transition: transform 0.3s;
+}
+
+.about a:hover img {
+    transform: scale(1.05); 
+	filter: grayscale(100%);
+}
+
+
 .about button{
 	width: 100%;
 	margin-top: 50px;

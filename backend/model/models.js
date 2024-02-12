@@ -6,6 +6,7 @@ const SALT_WORK_FACTOR = 10;
 const nameValidationRegex = /^[a-zA-Z]+(?:['-][a-zA-Z]+)*$/;
 const emailValidationRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const passwordValidationRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+const timeZoneValidationRegex = /(^[\w\-\+]+\/[\w\-\+]+(?:\/[\w\-\+]+)?$)|(^UTC$|^utc$)/;
 
 mongoose.connect(process.env.MODE === "prod" ? process.env.PROD : process.env.DEV)
     .then(() => console.log("MongoDB connected"))
@@ -64,7 +65,12 @@ mongoose.connect(process.env.MODE === "prod" ? process.env.PROD : process.env.DE
         // Future Data Points
         timeZone: { // To support localized notifications and reminders
             type: String,
-            required: false, // Optional to start, can be updated post-registration
+            required: false,
+            validate: {
+                validator: function(v) {
+                    return timeZoneValidationRegex.test(v);
+                },
+                message: props => `${props.value} is not a valid time zone identifier!`
         },
         preferredLanguage: { // For customizing app language
             type: String,
@@ -116,6 +122,7 @@ const taskSchema = new mongoose.Schema({
     // Future Data Points
     category: [{ // To allow categorization and filtering of tasks
         type: String,
+        enum: ['Work', 'Personal', 'Health'], // Example set of categories
         required: false,
     }],
     isRecurring: { // To manage recurring tasks without user needing to re-enter them
@@ -145,6 +152,8 @@ const pomodoroSessionSchema = new mongoose.Schema({
     },
     customDuration: { 
         type: Number,
+        min: [5, 'Custom duration must be at least 5 minutes.'],
+        max: [60, 'Custom duration must be no more than 60 minutes.'],
     },
     sessionType: { 
         type: String,

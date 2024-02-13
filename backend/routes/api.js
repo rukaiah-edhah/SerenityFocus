@@ -6,16 +6,11 @@ const mongoose = require('mongoose');
 
 // USER API
 
-api.get("/get_users", async (req, res) => {
+api.get("/username", async (req, res) => {
     try {
-        const getUsers = await users.find({});
+        const username = await Users.findOne({ username: req.body.username});
 
-        // const userWithoutPass = {
-        //     ...getUsers.toObject(),
-        //     password: undefined
-        // }
-
-        res.json(getUsers);
+        res.json({ username });
     } catch (err){
         console.error(err);
         res.sendStatus(400);

@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 
 api.get("/username", async (req, res) => {
     try {
-        const username = await Users.findOne({ username: req.body.username});
+        const username = await Users.findOne({ username: res.username});
 
         res.json({ username });
     } catch (err){

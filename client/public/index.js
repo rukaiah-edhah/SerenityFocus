@@ -1,30 +1,44 @@
-// pop up effect
+// popup effect
 
-let popup = document.getElementById("about")
-
-function openPopup() {
-    closeSignIn();
-    popup.classList.add("open-popup");
-}
-
-function closePopup() {
-    popup.classList.remove("open-popup");
-}
-
+let about = document.getElementById("About");
+let stats = document.getElementById("Stats");
 let signIn = document.getElementById("sign_in");
 
-
-function openSignIn() {
-    closePopup();
-    signIn.classList.add("open-sign_in");  
+function openAbout() {
+	close();
+	about.classList.add("open");
 }
 
-function closeSignIn() {
-	signIn.classList.remove("open-sign_in");  
+function openStats() {
+	close();
+	stats.classList.add("open");
+}
+
+function openSignIn() {
+	close();
+	signIn.classList.add("open");  
 }
 
 function goBack() {
-    openSignIn();  
+	openSignIn();  
+}
+
+function close() {
+	about.classList.remove("open");
+	stats.classList.remove("open");
+	signIn.classList.remove("open");
+}
+
+function closeAbout() {
+	about.classList.remove("open");
+}
+
+function closeStats() {
+	stats.classList.remove("open");
+}
+
+function closeSignIn() {
+	signIn.classList.remove("open");
 }
 
 //Themes

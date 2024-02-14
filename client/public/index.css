@@ -73,16 +73,7 @@ button:hover {
 }
 
 /* about us */
-h2{
-	text-align: center;
-	font-size: 38px;
-	font-weight: 500;
-	margin: 30px 0 10px;
-	margin-bottom: 20px;
-	background: none;
-}
-
-.about{
+.About{
 	width: 300px; /* Adjusted to match the sign_in popup */
 	background: var(--pop_up_background);
 	border-radius: 30px;
@@ -96,13 +87,22 @@ h2{
 	transition: transform 0.4s, top 0.4s;
 }
 
-.about p{
+.About h2{
+	text-align: center;
+	font-size: 38px;
+	font-weight: 500;
+	margin: 30px 0 10px;
+	margin-bottom: 20px;
+	background: none;
+}
+
+.About p{
 	background-color: var(--pop_up_background);
 	font-size: larger;
 	line-height: 1.2;
 }
 
-.about img{
+.About img{
 	width: 90px;
 	height: 90px;
 	margin-top: -30px;
@@ -110,21 +110,21 @@ h2{
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 10);
 }
 
-.about a {
+.About a {
     text-decoration: none;
 }
 
-.about a img {
+.About a img {
     transition: transform 0.3s;
 }
 
-.about a:hover img {
+.About a:hover img {
     transform: scale(1.05); 
 	filter: grayscale(100%);
 }
 
 
-.about button{
+.About button{
 	width: 100%;
 	margin-top: 50px;
 	padding: 10px 0;
@@ -137,11 +137,20 @@ h2{
 	box-shadow: 0 5px 5px var(--shadow);
 }
 
-.open-popup{
-	visibility: visible;
-	top: 50%;
-	transform: translate(-50%, -50%) scale(1);
-	z-index: 8;
+/*Stats*/
+
+.Stats {
+	width: 300px;
+	background: var(--pop_up_background);
+	border-radius: 30px;
+	position: absolute;
+	top: 1;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0.1);
+	padding: 20px 30px 30px;
+	color:var(--text_color) ;
+	visibility: hidden;
+	transition: transform 0.4s, top 0.4s;
 }
 
 /* Combined styles for sign-in and sign-up */
@@ -157,13 +166,6 @@ h2{
     color: var(--text_color);
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
-}
-
-.open-sign_in, .open-sign_up {
-    visibility: visible;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    z-index: 8;
 }
 
 input[type="text"],
@@ -237,6 +239,13 @@ input[type="password"] {
     padding: 5px 10px;
     text-decoration: underline;
     font-size: 14px;
+}
+
+.open {
+	visibility: visible;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(1);
+	z-index: 8;
 }
 
 main {

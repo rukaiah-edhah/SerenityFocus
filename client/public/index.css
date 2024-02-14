@@ -78,7 +78,7 @@ button:hover {
 	background: var(--pop_up_background);
 	border-radius: 30px;
 	position: absolute;
-	top: 1;
+	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%) scale(0.1);
 	padding: 20px 30px 30px; /* Adjust padding to match sign_in popup */
@@ -111,15 +111,15 @@ button:hover {
 }
 
 .About a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .About a img {
-    transition: transform 0.3s;
+  transition: transform 0.3s;
 }
 
 .About a:hover img {
-    transform: scale(1.05); 
+  transform: scale(1.05); 
 	filter: grayscale(100%);
 }
 
@@ -140,11 +140,11 @@ button:hover {
 /*Stats*/
 
 .Stats {
-	width: 300px;
+	width: 600px;
 	background: var(--pop_up_background);
 	border-radius: 30px;
 	position: absolute;
-	top: 1;
+	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%) scale(0.1);
 	padding: 20px 30px 30px;
@@ -153,18 +153,34 @@ button:hover {
 	transition: transform 0.4s, top 0.4s;
 }
 
-.Stats div {
-	border: 2px dotted green;
+.task_container {
+	display: flex;
 }
 
-.task_stat {
-	position: relative;
+.finished_tasks {
+	flex: 1;
 }
 
-.chart_stat {
-	position: relative;
-	left:
+.chart_for_nerds {
+	flex: 1;
 }
+
+.chart {
+  width: 200px;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.bar {
+  width: 20px;
+  background-color: #007bff;
+  border-radius: 3px;
+}
+
 /* Combined styles for sign-in and sign-up */
 .sign_in, .sign_up {
     width: 300px;

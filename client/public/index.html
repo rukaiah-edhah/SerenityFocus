@@ -38,9 +38,39 @@
 		</div>
 		<div class="Stats" id="Stats">
 			<h2 class="center">Stats</h2>
-			<div class="task_stat">This is where the tasks go</div>
-			<div class="chart_stat">This is where the charts go</div>
-			<button type="button" onclick="closeStats()">OK</button>
+			<div class="task_container">
+				<div class="finished_tasks">
+					<h1 class="center">Finished Tasks</h1>
+					<div>Today:</div>
+						<ol>
+							<li>Task1</li>
+							<li>Task2</li>
+							<li>Task3</li>
+						</ol>
+					<div>All:</div>
+						<ol>
+							<li>Task1</li>
+							<li>Task2</li>
+							<li>Task3</li>
+						</ol>
+				</div>
+				<div class="chart_for_nerds">
+					<h1 class="center">Charts for Nerds</h1>
+					<div class="chart">
+						<div class="bar" style="height: 10%;"></div>
+						<div class="bar" style="height: 60%;"></div>
+						<div class="bar" style="height: 40%;"></div>
+						<div class="bar" style="height: 90%;"></div>
+					</div>
+					<div class="chart">
+						<div class="bar" style="height: 80%;"></div>
+						<div class="bar" style="height: 60%;"></div>
+						<div class="bar" style="height: 40%;"></div>
+						<div class="bar" style="height: 90%;"></div>
+					</div>					
+				</div>
+			</div>
+			<button type="button" id="close" onclick="closeStats()">Close</button>
 		</div>
 		<div class="sign_in" id="sign_in">
 			<h2>Sign In</h2>

@@ -182,6 +182,15 @@ button:hover {
 }
 
 /* Combined styles for sign-in and sign-up */
+.sign_in h2{
+	text-align: center;
+	font-size: 38px;
+	font-weight: 500;
+	margin: 30px 0 10px;
+	margin-bottom: 20px;
+	background: none;
+}
+
 .sign_in, .sign_up {
     width: 300px;
     background: var(--pop_up_background);

@@ -492,9 +492,13 @@ color: var(--text_color);
 	footer {
         width: 100%;
         text-align: center; 
-        padding: 90px 0; 
+        padding: 100px 0; 
 	}
 
+	.all-the-tasks {
+		max-height: 50px;
+		overflow:auto;
+	}
 
 }@media (max-width: 867px) {
     .nav_bar img {

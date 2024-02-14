@@ -181,7 +181,7 @@ button:hover {
   border-radius: 3px;
 }
 
-/* Combined styles for sign-in and sign-up */
+/* Styles for sign-in */
 .sign_in h2{
 	text-align: center;
 	font-size: 38px;
@@ -191,7 +191,7 @@ button:hover {
 	background: none;
 }
 
-.sign_in, .sign_up {
+.sign_in{
     width: 300px;
     background: var(--pop_up_background);
     border-radius: 30px;
@@ -216,13 +216,13 @@ input[type="password"] {
 }
 
 
-.sign_in form label, .sign_up form label {
+.sign_in form label {
     display: block;
     margin-bottom: 5px;
     color: var(--text_color);
 }
 
-#sign_in_btn, #signup_submit {
+#sign_in_btn {
     width: 100%;
     margin-top: 50px;
     padding: 10px 0;
@@ -259,24 +259,7 @@ input[type="password"] {
     cursor: pointer;
     font-size: 14px;
 }
-
-/* Additional options for sign-up form */
-
-.sign_up .additional-options {
-    display: flex;
-    justify-content: center; 
-    margin-top: 20px;
-}
-
-.sign_up .additional-options button {
-    background: transparent;
-    border: none;
-    color: var(--highlight_color);
-    cursor: pointer;
-    padding: 5px 10px;
-    text-decoration: underline;
-    font-size: 14px;
-}
+/**/
 
 .open {
 	visibility: visible;

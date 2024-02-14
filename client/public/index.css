@@ -153,6 +153,18 @@ button:hover {
 	transition: transform 0.4s, top 0.4s;
 }
 
+.Stats div {
+	border: 2px dotted green;
+}
+
+.task_stat {
+	position: relative;
+}
+
+.chart_stat {
+	position: relative;
+	left:
+}
 /* Combined styles for sign-in and sign-up */
 .sign_in, .sign_up {
     width: 300px;
@@ -272,7 +284,7 @@ main {
 .tasks {
 	background: var(--tasks_background);
 	border-radius: 20px;
-	position:relative;
+	position:absolute;
 	top: 4vw;
 	left: 35vw;
 	width: 220px;
@@ -376,6 +388,10 @@ main {
 	align-items: center;
 }
 
+.main-container {
+	position: relative;
+	top: 150px;
+}
 .circle-container {
 	border-radius: 50%;
 	width: 400px;
@@ -437,6 +453,7 @@ main {
 
 .controls {
 	position: relative;
+	top:150px;
 	padding-bottom: 20px;
 	letter-spacing: 30px;
 }

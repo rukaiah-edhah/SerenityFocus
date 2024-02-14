@@ -473,3 +473,36 @@ display:flex;
 justify-content: center;
 color: var(--text_color);
 }
+
+/* Responsive Design */
+@media (max-width: 1088px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px; 
+    }
+
+    .tasks {
+        top: auto; 
+        left: 50%; 
+        transform: translateX(-50%); 
+        margin-top: 500px;
+    } 
+
+	footer {
+        width: 100%;
+        text-align: center; 
+        padding: 90px 0; 
+	}
+
+
+}@media (max-width: 867px) {
+    .nav_bar img {
+        width: 90px; 
+        height: 90px;
+    }
+
+    .nav_bar .btn {
+		display: none;
+    }
+}

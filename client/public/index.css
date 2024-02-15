@@ -108,6 +108,7 @@ button:hover {
 	margin-top: -30px;
 	border-radius: 50%;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 10);
+	filter: grayscale(100%);
 }
 
 .About a {
@@ -120,7 +121,7 @@ button:hover {
 
 .About a:hover img {
   transform: scale(1.05); 
-	filter: grayscale(100%);
+	filter: grayscale(0%);
 }
 
 

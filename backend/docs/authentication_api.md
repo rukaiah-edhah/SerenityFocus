@@ -8,7 +8,7 @@ This documentation covers key authentication endpoints for signing in, signing u
 
 ### `/signup` (POST)
 - Registers a new user.
-- **Body**: `username`, `password`, `firstName`, `lastName`, `email`.
+- **Body**: `username`, `password`, `firstname`, `lastname`, `email`.
 
 ### `/signin` (GET/POST)
 - Authenticates user.

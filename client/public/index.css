@@ -351,6 +351,7 @@ main {
 	color: var(--text_color);
 	cursor: pointer;
 	margin-left: 1px;
+	text-align: left;
 }
 
 .checkbox-label::before{

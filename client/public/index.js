@@ -79,6 +79,10 @@ function startCountdown() {
 	if (!countdownInterval && totalSeconds > 0) {
 		secondsRemaining = totalSeconds;
 		countdownInterval = setInterval(updateCountdown, 1000);
+
+		semicircles.forEach(semicircle => {
+			semicircle.style.display = 'block';
+		});
 	}
 	paused = false;
 }
@@ -168,11 +172,17 @@ function updateProgressRing() {
 }
 
 function resetProgressRing() {
-	semicircles[0].style.transform = 'rotate(0deg)';
-	semicircles[1].style.transform = 'rotate(0deg)';
-	semicircles[2].style.display = 'block';
-}
+	// Hide all semicircles
+	semicircles.forEach(semicircle => {
+			semicircle.style.display = 'none';
+	});
 
+	// Clear the current timerLoop interval
+	clearInterval(timerLoop);
+
+	// Reset timerLoop interval to keep the progress ring updated
+	timerLoop = setInterval(updateProgressRing);
+}
 
 
 //tasks

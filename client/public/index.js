@@ -63,7 +63,7 @@ const initialTotalSeconds = 0; //fixed the one sec error
 
 function addFive() {
 	if (!paused && !countdownInterval && totalSeconds < 3600) {  // 60 minutes in seconds
-		totalSeconds += 10; // 5 minutes in seconds// change this later to 300
+		totalSeconds += 300; // 5 minutes in seconds
 		updateDisplay();
 	}
 }
@@ -138,7 +138,7 @@ function formatTime(time) {
 	return time < 10 ? `0${time}` : time;
 }
 
-//Circle
+//Ring
 const semicircles = document.querySelectorAll('.semicircle');
 
 const timerLoop = setInterval(updateProgressRing);
@@ -159,12 +159,18 @@ function updateProgressRing() {
 	}
 
 	//end
-	if(currentTimer < 1) {
+	if(currentTimer < 1 && !paused) {
 		clearInterval(timerLoop);
 		semicircles[0].style.display = 'none';
 		semicircles[1].style.display = 'none';
 		semicircles[2].style.display = 'none';
 	}
+}
+
+function resetProgressRing() {
+	semicircles[0].style.transform = 'rotate(0deg)';
+	semicircles[1].style.transform = 'rotate(0deg)';
+	semicircles[2].style.display = 'block';
 }
 
 

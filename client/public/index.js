@@ -249,3 +249,23 @@ document.addEventListener('DOMContentLoaded', function() {
 		})
 		.catch(err => console.error('Error fetching username:', err))
 })
+
+//  Fetch tasks from the backend API and display them in the frontend
+async function fetchTasks() {
+    try {
+        const response = await fetch('/api/get_tasks');
+        const tasks = await response.json();
+        const tasksContainer = document.querySelector('.all-the-tasks');
+        tasksContainer.innerHTML = '';
+        tasks.forEach(task => {
+            const taskElement = document.createElement('div');
+            taskElement.classList.add('task');
+            taskElement.textContent = task.description;
+            tasksContainer.appendChild(taskElement);
+        });
+    } catch (error) {
+        console.error('Failed to fetch tasks:', error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', fetchTasks);

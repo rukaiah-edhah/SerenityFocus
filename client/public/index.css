@@ -301,8 +301,6 @@ main {
 	padding:10px 30px 30px;
 	color: var(--text_color);
 	margin-top: 20px;
-	overflow: auto;
-	white-space: nowrap;
 }
 
 #taskInput{
@@ -329,7 +327,8 @@ main {
 
 .all-the-tasks {
 	max-height: 300px;
-	overflow:auto;
+	overflow-y: auto;
+	overflow-x:hidden;
 }
 
 .field-group {
@@ -342,6 +341,7 @@ main {
 	opacity: 0;
 }
 
+/*check mark not the label*/
 .checkbox-label{
 	position:relative;
 	align-self:baseline;

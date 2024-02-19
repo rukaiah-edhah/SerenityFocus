@@ -236,6 +236,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
+//Usename
+
 document.addEventListener('DOMContentLoaded', function() {
 	fetch('/api/username')
 		.then(res => res.json())

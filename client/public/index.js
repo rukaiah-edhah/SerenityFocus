@@ -242,43 +242,5 @@ function toggleNav() {
     navBar.classList.toggle('nav-active');
 }
 
-//  Fetch tasks from the backend API and display them in the frontend
-async function fetchTasks(userId) {
-    try {
-        const response = await fetch('/api/get_tasks');
-        const tasks = await response.json();
-        const tasksContainer = document.querySelector('.all-the-tasks');
-        tasksContainer.innerHTML = '';
-        if (userId === tasks.user){
-			tasks.forEach(task => {
-				const taskElement = document.createElement('div');
-				taskElement.classList.add('task');
-				taskElement.textContent = task.description;
-				tasksContainer.appendChild(taskElement);
-			});
-		}
-    } catch (error) {
-        console.error('Failed to fetch tasks:', error);
-    }
-}
 
-async function postTask(userId, description, status){
-	try {
-		const res = await fetch(`/api/post_tasks/${userId}`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				description: description,
-				status: status,
-			}),
-		});
-		const newTask = await res.json();
-		console.log('Task created: ', newTask)
-	} catch (error){
-		console.error('Failed to post task: ', error)
-	}
-}
-
-document.addEventListener('DOMContentLoaded', fetchTasks);
+// document.addEventListener('DOMContentLoaded', fetchTasks);

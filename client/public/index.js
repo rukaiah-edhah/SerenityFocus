@@ -241,6 +241,3 @@ function toggleNav() {
     const navBar = document.querySelector('.nav_bar');
     navBar.classList.toggle('nav-active');
 }
-
-
-// document.addEventListener('DOMContentLoaded', fetchTasks);

@@ -242,22 +242,6 @@ function toggleNav() {
     navBar.classList.toggle('nav-active');
 }
 
-//Usename
-
-document.addEventListener('DOMContentLoaded', function() {
-	fetch('/api/username')
-		.then(res => res.json())
-		.then(data => {
-			const usernameBtn = document.querySelector('.api_username')
-			if (usernameBtn){
-				usernameBtn.textContent = `WELCOME ${data.username}`;
-			} else {
-				usernameBtn.textContent = `WELCOME`
-			}
-		})
-		.catch(err => console.error('Error fetching username:', err))
-})
-
 //  Fetch tasks from the backend API and display them in the frontend
 async function fetchTasks(userId) {
     try {

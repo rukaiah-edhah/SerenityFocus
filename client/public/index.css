@@ -63,13 +63,14 @@ button:hover {
 	cursor: pointer;
 }
 
-.nav_bar img {
+.logo {
   width: 120px; 
   height: 120px; 
-	position: absolute;
+	position: fixed;
 	left: 30px;
 	background-color: var(--check);
 	border-radius: 0px 0px 10px 10px;
+	
 }
 
 /* about us */
@@ -478,6 +479,19 @@ color: var(--text_color);
 margin-top: 20px;
 }
 
+
+/* toggle icon*/ 
+.toggle-icon { 
+	display: none;
+    position: absolute;
+    right: 15px; 
+    top: 15px; 
+	width: 40px;  
+    height: auto;
+    cursor: pointer;
+}
+
+
 /* Responsive Design */
 @media (max-width: 1088px) {
 	main {
@@ -507,8 +521,10 @@ margin-top: 20px;
 	overflow:auto;
 	}
 
-}@media (max-width: 867px) {
-	.nav_bar img {
+}@media (max-width: 755px) {
+
+	.logo {
+	position: fixed;
 	width: 90px; 
 	height: 90px;
 	}
@@ -516,4 +532,35 @@ margin-top: 20px;
 	.nav_bar .btn {
 	display: none;
 	}
+
+	.toggle-icon {
+        display: block;
+    }
+
+	.nav-active .btn {
+		display: block; 
+		width: 100%; 
+		margin-top: 20px;
+		background-color: var(--pop_up_background);
+	}
+
+	.Stats {
+		width: 400px;
+		z-index: 9;
+	}
+	.About {
+		z-index: 9;
+	}
+	
+	.nav-active {
+		flex-direction: column; 
+		position: absolute; 
+		width: 150px; 
+		right: 15px; 
+		background-color: var(--pop_up_background);
+		padding: 20px; 
+		border-radius: 10px;  
+		z-index: 9;
+	}
+	
 }

@@ -236,6 +236,12 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
+// toggle menu 
+function toggleNav() {
+    const navBar = document.querySelector('.nav_bar');
+    navBar.classList.toggle('nav-active');
+}
+
 //Usename
 
 document.addEventListener('DOMContentLoaded', function() {

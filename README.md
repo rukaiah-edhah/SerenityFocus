@@ -4,6 +4,12 @@
 
 Serenity Focus is a web application designed to help users enhance their productivity by effectively managing tasks and utilizing the Pomodoro technique for focused work sessions. Developed as part of the TechWise Program web development course, supported by Google and provided by TalentSprint. 
 
+───────────────────── ⋆⋅☆⋅⋆ ────────────────────
+
+![A Quick Overview](https://res.cloudinary.com/dqther0aa/image/upload/v1708529815/r0dptlafv2rmdctz47el.gif)
+
+───────────────────── ⋆⋅☆⋅⋆ ────────────────────
+
 ### Purpose 
 
 Our team was motivated by the need for a simple yet powerful tool to assist in daily task management and to promote better work habits through the disciplined application of the Pomodoro technique. Serenity Focus was born out of this need, with a vision to empower users to reach their productivity goals.

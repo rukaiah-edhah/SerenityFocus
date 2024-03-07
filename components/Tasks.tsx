@@ -1,10 +1,7 @@
 import {
     Card,
     CardContent,
-    CardDescription,
     CardFooter,
-    CardHeader,
-    CardTitle,
   } from "@/components/ui/card"
   import { Button } from "@/components/ui/button"
   import { Input } from "@/components/ui/input"
@@ -17,17 +14,16 @@ export default function Tasks() {
         },
         {
             id:2,
-            task: "do laundary",
+            task: "Study for Calculus II",
         },
         {
             id:3,
-            task: "do laundary",
-        },
-        
+            task: "Get Ready for Midterms",
+        },        
     ]
     return (
         <div>
-            <Card className='w-[350px] bg-base-300 border-base-300 rounded-xl'>
+            <Card className='w-[350px] h-[200px] bg-base-300 border-base-300 rounded-xl pb-5'>
               <CardContent className=''>
                 <form className='mt-5'>
                   <div className='flex w-full max-w-sm items-center space-x-2'>

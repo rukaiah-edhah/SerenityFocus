@@ -2,11 +2,6 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { themeChange } from 'theme-change'
-import {
-    Popover,
-    PopoverTrigger
-} from "@/components/ui/popover"
-import { Button } from "@/components/ui/button"
 import About from "./About";
 
 export default function Navbar(){
@@ -21,13 +16,7 @@ export default function Navbar(){
                     <div className="block mr-4">
                         <ul className="flex flex-row gap-4 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center md:gap-6 lg:gap-12">
                             <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                                <Popover>
-                                    <PopoverTrigger asChild className="hover:cursor-pointer">
-                                        <p className="flex items-center text-base font-medium transition-all hover:opacity-60">About</p>
-                                    </PopoverTrigger>
-                                    <About />
-                                </Popover>
-                                {/* <Link href="#" className="flex items-center text-base font-medium transition-all hover:opacity-60">About</Link> */}
+                                <About />
                             </li>
                             <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
                                 <div className="dropdown">

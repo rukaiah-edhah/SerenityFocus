@@ -1,6 +1,3 @@
-import {
-  PopoverContent,
-} from "@/components/ui/popover"
 import Image from "next/image"
 import Link from "next/link"
 

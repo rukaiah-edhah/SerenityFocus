@@ -73,10 +73,10 @@ export default function Tasks() {
     return (
         <div>
             <Card className='w-[350px] h-[250px] bg-base-300 border-base-300 rounded-xl pb-5'>
-              <CardContent className=''>
+              <CardContent>
                 <Form {...form}>
                   <form className='mt-5 space-y-6 w-full' onSubmit={form.handleSubmit(handleSubmit)}>
-                    <div className='flex w-full max-w-md items-center space-x-2'>
+                    <div className='flex w-full max-w-md items-center gap-2'>
                       <FormField 
                         control={form.control}
                         name="task"
@@ -86,7 +86,7 @@ export default function Tasks() {
                           </FormItem>
                         )}
                       />
-                      <Button type='submit' >Add</Button>
+                      <Button type='submit' className="w-1/3 bg-base-content text-base-300">Add</Button>
                     </div>
                   </form>
                 </Form>

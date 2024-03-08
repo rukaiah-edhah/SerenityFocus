@@ -54,7 +54,7 @@ export default function Tasks() {
         });
 
         if (res.ok){
-          router.push('/');
+          router.refresh();
         } else {
           throw new Error('failed to create task')
         }

@@ -7,29 +7,42 @@ import { updateTaskStatus } from './updateTask';
 export default function TaskList(){
     const [taskList, setTaskList] = useState<any[]>([]);
 
+
+    const fetchData = async () => {
+        try {
+            const res = await fetch("/api/task", {
+                method: "GET", 
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            if (!res.ok){
+                throw new Error('failed to create task')
+            } 
+            const tasks = await res.json();
+            setTaskList(tasks);
+        } catch (err){
+            console.error('Error fetching tasks: ', err);
+        }
+    };
+
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await fetch("/api/task", {
-                    method: "GET", 
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
-                });
-
-                if (!res.ok){
-                    throw new Error('failed to create task')
-                } 
-
-                const tasks = await res.json();
-                setTaskList(tasks);
-            } catch (err){
-                console.error('Error fetching tasks: ', err);
-            }
-        };
-
         fetchData();
     }, []);
+
+    const removePost = async (id: any) => {
+        const confirmed = confirm('Are you sure?');
+
+        if (confirmed) {
+            const res = await fetch(`/api/task?id=${id}`, {
+                method: "DELETE",
+            });
+
+            if (res.ok){
+                setTaskList(prevTasks => prevTasks.filter(task => task.id !== id));
+            }
+        }
+    }
 
     const handleCheckboxChange = async (taskId: string, checked: boolean) => {
         try {
@@ -54,7 +67,7 @@ export default function TaskList(){
                       <input type="checkbox" className="checkbox inline align-middle rounded-full mr-2"
                          onChange={(e) => handleCheckboxChange(p.id, e.target.checked)}/> {p.task || ''}  
                     </div> 
-                    <Deletebtn id={p.id}/>
+                    <Deletebtn id={p.id} onRemove={removePost}/>
                 </div>
             ))} 
         </>

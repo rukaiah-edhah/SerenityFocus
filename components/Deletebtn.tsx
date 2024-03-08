@@ -1,25 +1,14 @@
 'use client'
-import { useRouter } from 'next/navigation';
 
-export default function Deletebtn({id} : {id: string}){
-    const router = useRouter();
+export default function Deletebtn({id, onRemove} : {id: string, onRemove: any}){
 
-    const removePost = async () => {
-        const confirmed = confirm('Are you sure?');
-
-        if (confirmed) {
-            const res = await fetch(`/api/task?id=${id}`, {
-                method: "DELETE",
-            });
-
-            if (res.ok){
-                router.refresh();
-            }
-        }
+    const handleClick = () => {
+        onRemove(id);
     }
+    
     return(
         <>
-            <button onClick={removePost} className="btn btn-sm btn-circle btn-ghost" >x</button>
+            <button onClick={handleClick} className="btn btn-sm btn-circle btn-ghost" >x</button>
         </>
     )
 }

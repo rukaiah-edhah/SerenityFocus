@@ -7,7 +7,6 @@ import {
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useState, useEffect } from 'react';
-import { useRouter } from "next/navigation"
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -49,7 +48,6 @@ export default function Tasks() {
           } 
           const tasks = await res.json();
           setTaskList(tasks);
-          // await fetchData();
       } catch (err){
           console.error('Error fetching tasks: ', err);
       }
@@ -77,7 +75,7 @@ export default function Tasks() {
       try {
           await updateTaskStatus(taskId, checked);
           const updatedTaskList = taskList.map(task => {
-              if (task._id === taskId) {
+              if (task.id === taskId) {
                   return { ...task, completed: checked };
               }
               return task;
@@ -106,10 +104,7 @@ export default function Tasks() {
         if (!res.ok){
           throw new Error('failed to create task')
         } 
-        
-        // const newTask = await res.json();
-
-        // setTaskList((prevTaskList) => [...prevTaskList, newTask]);
+      
         await fetchData();
 
       } catch (error){

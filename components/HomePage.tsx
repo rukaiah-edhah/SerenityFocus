@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import Tasks from '@/components/Tasks';
 import Timer from '@/components/Timer';
 
@@ -15,7 +14,6 @@ export default function HomePage({children}: {children: React.ReactNode}) {
             {children}
           </div>
           
-          {/* acutal clock */}
           <div className='flex flex-col items-center justify-center'>
             <Timer />
           </div>

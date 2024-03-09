@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { themeChange } from 'theme-change'
 import About from "./About";
+import Stats from "./Stats";
 
 export default function Navbar(){
     useEffect(() => {
@@ -32,7 +33,7 @@ export default function Navbar(){
                                 </div>
                             </li>
                             <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                                <Link href="#" className="flex items-center text-base font-medium transition-all hover:opacity-60">Stats</Link>
+                                <Stats />
                             </li>
                             <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
                                 <Link href="#" className="flex items-center text-base font-medium transition-all hover:opacity-60">Sign In</Link>

@@ -7,7 +7,7 @@ export default async function User(){
     return(
         <>
             {user ?
-            <div className='text-2xl'>Welcome, <span className='font-bold'>{user?.given_name}</span></div> : 
+            <div className='text-2xl'>Welcome, <span className='font-bold'>{user.given_name}</span></div> : 
             <div></div>}
         </>
     )

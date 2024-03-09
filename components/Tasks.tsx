@@ -6,21 +6,19 @@ import {
 } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { useState } from 'react';
-import TaskList from "./TaskList"
+import { useState, useEffect } from 'react';
 import { useRouter } from "next/navigation"
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import {
   Form,
-  FormControl,
-  FormDescription,
   FormField,
   FormItem,
-  FormLabel,
-  FormMessage,
 } from "@/components/ui/form"
+import { updateTaskStatus } from './updateTask';
+import Deletebtn from "./Deletebtn"
+
 
 interface Task {
   id: number,
@@ -36,7 +34,63 @@ export default function Tasks() {
     const form = useForm<z.infer<typeof schema>>({
       resolver: zodResolver(schema),
     });
-    const router = useRouter();
+    const [taskList, setTaskList] = useState<any[]>([]);
+
+    const fetchData = async () => {
+      try {
+          const res = await fetch("/api/task", {
+              method: "GET", 
+              headers: {
+                  "Content-Type": "application/json"
+              }
+          });
+          if (!res.ok){
+              throw new Error('failed to create task')
+          } 
+          const tasks = await res.json();
+          setTaskList(tasks);
+          // await fetchData();
+      } catch (err){
+          console.error('Error fetching tasks: ', err);
+      }
+    };
+
+    useEffect(() => {
+      fetchData();
+    }, []);
+
+    const removePost = async (id: any) => {
+      const confirmed = confirm('Are you sure?');
+
+      if (confirmed) {
+          const res = await fetch(`/api/task?id=${id}`, {
+              method: "DELETE",
+          });
+
+          if (res.ok){
+              setTaskList(prevTasks => prevTasks.filter(task => task.id !== id));
+          }
+      }
+    }
+
+    const handleCheckboxChange = async (taskId: string, checked: boolean) => {
+      try {
+          await updateTaskStatus(taskId, checked);
+          const updatedTaskList = taskList.map(task => {
+              if (task._id === taskId) {
+                  return { ...task, completed: checked };
+              }
+              return task;
+          });
+          setTaskList(updatedTaskList);
+      } catch (error) {
+          console.error('Error updating task status:', error);
+      }
+    };
+
+    useEffect(() => {
+      console.log('Task List updated', taskList);
+    }, [taskList]);
 
     const handleSubmit = async (data: z.infer<typeof schema>) => {
       if (!data){
@@ -53,22 +107,19 @@ export default function Tasks() {
           body: JSON.stringify(data)
         });
 
-        if (res.ok){
-          router.refresh();
-        } else {
+        if (!res.ok){
           throw new Error('failed to create task')
-        }
+        } 
         
-        router.refresh();
+        // const newTask = await res.json();
+
+        // setTaskList((prevTaskList) => [...prevTaskList, newTask]);
+        await fetchData();
+
       } catch (error){
         console.error("Error adding task: ", error);
       }
     }
-
-    // const handleChange = (e: any) => {
-    //   const {name, value} = e.target;
-    //   formData.set(name, value);
-    // }
 
     return (
         <div>
@@ -92,7 +143,17 @@ export default function Tasks() {
                 </Form>
               </CardContent>
               <CardFooter className='flex flex-col w-full gap-2 items-start text-base-content overflow-auto' style={{ maxHeight: '150px'}}>
-                <TaskList />
+                <div>
+                {taskList.map((p:any) => (
+                    <div key={p.id} className="w-full gap-12 justify-between flex text-left">
+                        <div>
+                          <input type="checkbox" className="checkbox inline align-middle rounded-full mr-2"
+                             onChange={(e) => handleCheckboxChange(p.id, e.target.checked)}/> {p.task}  
+                        </div> 
+                        <Deletebtn id={p.id} onRemove={removePost}/>
+                    </div>
+                ))} 
+                </div>
               </CardFooter>
             </Card>
         </div>

@@ -88,10 +88,6 @@ export default function Tasks() {
       }
     };
 
-    useEffect(() => {
-      console.log('Task List updated', taskList);
-    }, [taskList]);
-
     const handleSubmit = async (data: z.infer<typeof schema>) => {
       if (!data){
         alert("all fields are required.");

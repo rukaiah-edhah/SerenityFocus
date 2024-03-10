@@ -12,7 +12,6 @@ To explore the initial version of Serenity Focus:
 
 1. Go to the **branches** dropdown on GitHub.
 2. Select the `initial-site` branch.
-- ![Example Image](./public/images/Dropdown.png)
 3. Explore the available code and documentation to understand the foundations of our project.
 
 ## Overview of the Initial Version

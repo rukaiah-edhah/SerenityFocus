@@ -4,15 +4,19 @@ This version of Serenity Focus is built with Next.js. If you're interested in ru
 
 ### Setup
 
-The project is bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), ensuring a smooth setup process. To run the development server, use one of the following commands:
+The project is bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), ensuring a smooth setup process. 
+
+Before running the development server, you need to install the project dependencies. Since this project uses Bun for package management, ensure you have [`Bun installed`](https://bun.sh/) on your machine. Then, execute the following command in the project directory:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+bun i
+# or 
+bun install 
+```
+
+After successfully installing the dependencies, you can start the development server using:
+
+```bash
 bun dev
 ```
 

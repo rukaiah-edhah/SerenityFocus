@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Serenity Focus - Updated Version
 
-## Getting Started
+Welcome to the updated version of Serenity Focus, a web application designed to enhance productivity through effective task management and the Pomodoro technique. 
 
-First, run the development server:
+## What's Changed?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This version integrate modern technology such as Next.js, React, and Tailwind CSS for a smoother, more efficient user experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Exploring the Old Version
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To explore the initial version of Serenity Focus:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Go to the **branches** dropdown on GitHub.
+2. Select the `initial-site` branch.
+- ![Example Image](./public/images/Dropdown.png)
+3. Explore the available code and documentation to understand the foundations of our project.
 
-## Learn More
+## Overview of the Initial Version
 
-To learn more about Next.js, take a look at the following resources:
+The original version of Serenity Focus was a culmination of our efforts during the TechWise Program course 2. It featured:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Task Management
+- Pomodoro Timer
+- Progress Tracking
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Developed using HTML, CSS, JavaScript, Node.js, Express.js, and MongoDB with Mongoose.
 
-## Deploy on Vercel
+## Connect With Us
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Rukaiah](https://www.linkedin.com/in/rukaiah-edhah/)
+- [Shevan](https://www.linkedin.com/in/shevan-abdulla-677685236/)
+- [Shaad](https://www.linkedin.com/in/rleehue-joseph/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+We're excited about the future of Serenity Focus and welcome any feedback or questions you may have. 
+
+## Getting Started 
+
+Check out the [Getting Started](./getting-started.md) page to get started =D

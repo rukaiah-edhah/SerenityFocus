@@ -20,7 +20,7 @@ import Deletebtn from "./Deletebtn"
 
 
 interface Task {
-  id: number,
+  id: string,
   task: string,
   completed: boolean 
 }
@@ -135,7 +135,7 @@ export default function Tasks() {
               </CardContent>
               <CardFooter className='flex flex-col w-full gap-2 items-start text-base-content overflow-auto' style={{ maxHeight: '150px'}}>
                 <div>
-                {taskList.map((p:any) => (
+                {taskList.map((p: Task) => (
                     <div key={p.id} className="w-full gap-12 justify-between flex text-left">
                         <div>
                           <input type="checkbox" className="checkbox inline align-middle rounded-full mr-2"

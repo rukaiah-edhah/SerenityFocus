@@ -8,7 +8,7 @@ export default function Deletebtn({id, onRemove} : {id: string, onRemove: any}){
     
     return(
         <>
-            <button onClick={handleClick} className="btn btn-sm btn-circle btn-ghost" >x</button>
+            <button onClick={handleClick} className="btn btn-sm btn-circle btn-ghost  align-top flex" >x</button>
         </>
     )
 }

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 export default function Timer(){
     let countdownInterval: any;
     let paused = false;
-    const [timeLeft, setTimeLeft] = useState(0);
+    const [timeLeft, setTimeLeft] = useState(1500);
     const [totalSeconds, setTotalSeconds] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
 

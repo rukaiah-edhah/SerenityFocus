@@ -1,5 +1,5 @@
 import sanityClient from "./sanityClient";
-import { Post, Author, Category } from '../lib/sanityTypes';
+import { Post } from '../lib/sanityTypes';
 
 
 export const getAllPosts = async (): Promise<Post[]> => {

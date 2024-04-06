@@ -73,7 +73,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("daisyui")],
+  plugins: [require("tailwindcss-animate"), require("daisyui"), require("@tailwindcss/typography")],
   daisyui: {
     themes: ["retro", "coffee", "valentine", "aqua"]
   }

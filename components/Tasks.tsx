@@ -128,7 +128,7 @@ export default function Tasks() {
                           </FormItem>
                         )}
                       />
-                      <Button type='submit' className="w-1/3 bg-base-content text-base-300">Add</Button>
+                      <Button type='submit' className="w-1/3 bg-base-content text-base-300 hover:text-base-content">Add</Button>
                     </div>
                   </form>
                 </Form>

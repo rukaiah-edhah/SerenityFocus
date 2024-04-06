@@ -16,10 +16,10 @@ export default function Navbar({children}: {children: React.ReactNode}){
                 <div className="flex items-center gap-12">
                     <div className="block mr-4">
                         <ul className="flex flex-row gap-4 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center md:gap-6 lg:gap-12">
-                            <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                            <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal">
                                 <About />
                             </li>
-                            <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                            <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal">
                                 <div className="dropdown">
                                     <div tabIndex={0} role="button" className="flex items-center text-base font-medium transition-all hover:opacity-60">
                                         Theme
@@ -32,8 +32,13 @@ export default function Navbar({children}: {children: React.ReactNode}){
                                     </ul>
                                 </div>
                             </li>
-                            <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                            <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal">
                                 <Stats />
+                            </li>
+                            <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal">
+                                <Link href="/blog" className="text-base font-medium transition-all hover:opacity-60 uppercase">
+                                    Blog
+                                </Link>
                             </li>
                             <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal">
                                 {children}

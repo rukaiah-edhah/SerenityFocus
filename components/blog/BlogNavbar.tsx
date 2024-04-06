@@ -10,8 +10,8 @@ export default function BlogNavbar({
   }, []);
 
   return (
-    <nav className="block top-0 uppercase z-10 w-full max-w-full px-4 py-2 lg:px-8 lg:py-4">
-      <div className="flex items-center justify-between">
+    <nav data-theme="" className="block top-0 uppercase z-10 w-full max-w-full px-4 py-2 lg:px-8 lg:py-4 bg-none">
+      <div className="flex items-center justify-end gap-6">
         <div className="flex items-center gap-6">
           <Link
             href="/"

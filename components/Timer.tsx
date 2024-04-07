@@ -77,21 +77,21 @@ export default function Timer(){
             <div className='flex flex-col items-center justify-center'>
                 <div className='items-center justify-center grid grid-cols-2 gap-5 lg:gap-6 w-full mb-5'>
                     <div>
-                        <Button type='button' onClick={() => addFive()} className='w-full bg-base-content text-base-300 hover:text-base-content'>+5</Button>
+                        <Button type='button' onClick={() => addFive()} className='w-full bg-base-content text-base-300 hover:text-slate-200'>+5</Button>
                     </div>
                     <div>
-                        <Button type='button' onClick={() => subFive()} className='w-full bg-base-content text-base-300 hover:text-base-content'>-5</Button>
+                        <Button type='button' onClick={() => subFive()} className='w-full bg-base-content text-base-300 hover:text-slate-200'>-5</Button>
                     </div>
                 </div>
                 <div className='items-center justify-center grid grid-cols-3 gap-4 lg:gap-6 w-full'>
                     <div>
-                        <Button type='button' onClick={() => startCountdown()} className='w-full bg-base-content text-base-300 hover:text-base-content'>Start</Button>
+                        <Button type='button' onClick={() => startCountdown()} className='w-full bg-base-content text-base-300 hover:text-slate-200'>Start</Button>
                     </div>
                     <div>
-                        <Button type='button' onClick={() => pauseCountdown()} className='w-full bg-base-content text-base-300 hover:text-base-content'>Pause</Button>
+                        <Button type='button' onClick={() => pauseCountdown()} className='w-full bg-base-content text-base-300 hover:text-slate-200'>Pause</Button>
                     </div>
                     <div>
-                        <Button type='button' onClick={() => resetCountdown()} className='w-full bg-base-content text-base-300 hover:text-base-content'>Reset</Button>
+                        <Button type='button' onClick={() => resetCountdown()} className='w-full bg-base-content text-base-300 hover:text-slate-200'>Reset</Button>
                     </div>
                 </div>
             </div>

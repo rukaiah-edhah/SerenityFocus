@@ -14,7 +14,7 @@ export default function SidebarDrawer() {
           <label htmlFor="my-drawer" className="drawer-overlay"></label>
           <ul className="min-h-full menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
             <li>
-              <span className="text-gray-900 font-bold">Popular Posts</span>
+              <span className="text-base font-bold">Popular Posts</span>
             </li>
             <li>
               <a>Placeholder for Post 1</a>
@@ -27,7 +27,7 @@ export default function SidebarDrawer() {
             </li>
   
             <li>
-              <span className="text-gray-900 font-bold mt-4">Categories</span>
+              <span className="text-base font-bold mt-4">Categories</span>
             </li>
             <li>
               <a>Time Management</a>
@@ -40,7 +40,7 @@ export default function SidebarDrawer() {
             </li>
   
             <li className="mt-4">
-              <span className="text-gray-900 font-bold">Newsletter Signup</span>
+              <span className="text-base font-bold">Newsletter Signup</span>
               <div className="mt-2">
                 <input
                   type="text"

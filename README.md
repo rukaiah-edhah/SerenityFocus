@@ -2,9 +2,16 @@
 
 Welcome to the updated version of Serenity Focus, a web application designed to enhance productivity through effective task management and the Pomodoro technique. 
 
+## Preview
+<div align="center">
+    <a href="https://www.serenityfocuss.com/">
+        <img src="./public/preview.png" align="center" width="1000px" alt="Serenity Focus Preview">
+    </a>
+</div>
+
 ## What's Changed?
 
-This version integrate modern technology such as Next.js, React, and Tailwind CSS for a smoother, more efficient user experience.
+This version integrate modern technology such as Next.js, DaisyUI, and Tailwind CSS for a smoother, more efficient user experience.
 
 ## Exploring the Old Version
 

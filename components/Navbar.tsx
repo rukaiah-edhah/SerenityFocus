@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { themeChange } from 'theme-change'
 import About from "./About";
 import Stats from "./Stats";
+import { ResNavbar } from "./resNavbar";
 
 export default function Navbar({children}: {children: React.ReactNode}){
     useEffect(() => {
@@ -12,9 +13,10 @@ export default function Navbar({children}: {children: React.ReactNode}){
 
     return(
         <nav data-theme="" className="block top-0 uppercase z-10 w-full max-w-full px-4 py-2 lg:px-8 lg:py-4">
-            <div className="flex items-center justify-center ">
+            <div className="flex items-center justify-between ">
+                <div></div>
                 <div className="flex items-center gap-12">
-                    <div className="block mr-4">
+                    <div className="hidden lg:block mr-4">
                         <ul className="flex flex-row gap-4 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center md:gap-6 lg:gap-12">
                             <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal">
                                 <About />
@@ -45,6 +47,11 @@ export default function Navbar({children}: {children: React.ReactNode}){
                             </li>
                         </ul>
                     </div>
+                    <ResNavbar 
+                        about={<About />}
+                        stats={<Stats />}
+                        children={children}
+                    />
                 </div>
             </div>
         </nav>

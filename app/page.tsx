@@ -1,6 +1,6 @@
 import HomePage from "@/components/HomePage"
 import User from "@/components/User"
-import Navbar from '@/components/Navbar'
+import Navbar from "@/components/Navbar/Navbar"
 import Logo from '@/components/Logo'
 import UserAuth from '@/components/UserAuth'
 import Footer from "@/components/Footer"

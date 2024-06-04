@@ -27,8 +27,8 @@ export function ResNavbar({
             <ul className="flex flex-col gap-4 ">
               {nav_items.map((n: any, index: number) => (
                 <li key={index} className="block p-1 font-sans text-sm antialiased font-normal leading-normal">
-                  {n === "Blog" ? (
-                    <Link href="/blog" className="text-base font-medium transition-all hover:opacity-60 uppercase">
+                  {n === "Blog" || n === "Home" ? (
+                    <Link href={n === "Blog" ? "/blog" : "/"} className="text-base font-medium transition-all hover:opacity-60 uppercase">
                       {n}
                     </Link>
                   ) : (

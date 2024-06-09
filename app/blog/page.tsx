@@ -15,7 +15,7 @@ export default function Blog() {
         <div className="flex-1 p-4">
           <BlogPostList />
         </div>
-        <aside className="w-80 p-4">
+        <aside className="w-80 p-4 hidden lg:block">
           <SidebarDrawer />
         </aside>
       </main>

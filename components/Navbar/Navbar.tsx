@@ -13,7 +13,7 @@ export default function Navbar({children}: {children: React.ReactNode}){
 
     return(
         <nav data-theme="" className={nav_class}>
-            <div className="flex items-center justify-between ">
+            <div className="flex items-center justify-center">
                 <div></div>
                 <div className="flex items-center gap-12">
                     <div className="hidden lg:block mr-4">

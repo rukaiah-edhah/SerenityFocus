@@ -17,7 +17,7 @@ export function ResNavbar({
   }, [])
 
   return(
-    <div className="flex flex-col lg:hidden">
+    <div className="flex flex-col lg:hidden  absolute top-4 right-2"> 
       <Sheet>
         <SheetTrigger>
           <IoMdMenu className="w-6 h-6 mr-2"/>

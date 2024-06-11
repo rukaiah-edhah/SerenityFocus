@@ -17,12 +17,12 @@ export function ResNavbar({
   }, [])
 
   return(
-    <div className="flex flex-col lg:hidden  absolute top-4 right-2"> 
+    <div className="flex flex-col lg:hidden absolute top-4 right-2"> 
       <Sheet>
         <SheetTrigger>
           <IoMdMenu className="w-6 h-6 mr-2"/>
         </SheetTrigger>
-        <SheetContent side="left" className="bg-base-content/100 border-none text-base-300 w-3/5 lg:w-1/5">
+        <SheetContent side="left" className="bg-base-content/100 border-none text-base-300 w-3/5 lg:w-1/5 flex items-end">
           <div className="mr-4">
             <ul className="flex flex-col gap-4 ">
               {nav_items.map((n: any, index: number) => (

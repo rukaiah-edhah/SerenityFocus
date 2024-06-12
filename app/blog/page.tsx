@@ -1,7 +1,7 @@
 import UserAuth from "@/components/UserAuth";
 import BlogNavbar from "@/components/blog/BlogNavbar";
 import SidebarDrawer from "@/components/blog/Sidebar";
-import BlogPostList from "@/components/blog/BlogPostCard";
+import PostsList from "@/components/blog/PostsList";
 import { ThemeDropdown } from "@/components/Navbar/theme-dropdown";
 
 export default function Blog() {
@@ -13,7 +13,7 @@ export default function Blog() {
       />
       <main data-theme="" className="flex">
         <div className="flex-1 p-4">
-          <BlogPostList />
+          <PostsList />
         </div>
         <aside className="w-80 p-4 hidden lg:block">
           <SidebarDrawer />

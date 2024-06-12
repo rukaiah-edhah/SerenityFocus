@@ -27,3 +27,9 @@ export interface Post {
   publishedAt: string;
   body: TypedObject[]; 
 }
+
+export interface PostProps {
+  params: {
+    slug: string;
+  };
+}

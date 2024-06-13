@@ -1,5 +1,5 @@
-import { sanityClient } from './sanity.client';
-import { Post } from './sanityTypes';
+import { sanityClient } from "./sanity.client";
+import { Post } from "./sanityTypes";
 
 export const getAllPosts = async (): Promise<Post[]> => {
   const query = `*[_type == "post"]{
@@ -7,12 +7,12 @@ export const getAllPosts = async (): Promise<Post[]> => {
     title,
     "slug": slug.current,
     "author": author->{name},
-    "mainImage": {
-      asset->{
-        _id,
-        url
-      }
-    },
+    "mainImage": mainImage{
+    asset->{
+      _id,
+      url
+    }
+  },
     "categories": categories[]->{title},
     publishedAt,
     body,

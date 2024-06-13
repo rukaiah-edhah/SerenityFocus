@@ -22,9 +22,9 @@ export default function PostsList() {
       {posts.map((post, index) => (
         <Link key={index} href={`/blog/${post.slug}`} className="card bg-base-100 shadow-xl">
             <figure>
-              {post.mainImage && post.mainImage.asset && post.mainImage.asset.url ? (
+              {post.mainImage ? (
                 <img
-                  src={urlFor(post.mainImage.asset)}
+                  src={urlFor(post.mainImage)}
                   alt={post.title}
                   className="w-full h-48 object-cover"
                 />

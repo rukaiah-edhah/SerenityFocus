@@ -27,7 +27,7 @@ export default function About() {
                                     width={100}
                                     height={100}
                                     alt="shevan"
-                                    className="transition-all  rounded-full object-fill object-center grayscale hover:filter-none hover:cursor-pointer"
+                                    className="transition-filter duration-500 ease-in-out rounded-full object-fill object-center grayscale hover:filter-none hover:cursor-pointer"
                                 />
                             </Link>
                         </div>
@@ -38,7 +38,7 @@ export default function About() {
                                     width={100}
                                     height={100}
                                     alt="rukaiah"
-                                    className="transition-all rounded-full object-cover object-center grayscale hover:filter-none hover:cursor-pointer"
+                                    className="transition-filter duration-500 ease-in-out rounded-full object-cover object-center grayscale hover:filter-none hover:cursor-pointer"
                                 />
                             </Link>
                         </div>
@@ -49,7 +49,7 @@ export default function About() {
                                     width={100}
                                     height={100}
                                     alt="shaad"
-                                    className="transition-all rounded-full object-cover object-center grayscale hover:filter-none hover:cursor-pointer"
+                                    className="transition-filter duration-500 ease-in-out rounded-full object-cover object-center grayscale hover:filter-none hover:cursor-pointer"
                                 />
                             </Link>
                         </div>

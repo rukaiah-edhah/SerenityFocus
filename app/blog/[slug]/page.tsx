@@ -1,9 +1,9 @@
-import { PostProps } from '@/lib/sanityTypes'
-import PostContent from '@/components/blog/PostContent'
-import BlogNavbar from '@/components/blog/BlogNavbar'
-import UserAuth from '@/components/UserAuth'
-import { ThemeDropdown } from '@/components/Navbar/theme-dropdown'
-import { fetchPostData } from '@/lib/fetchData'
+import { PostProps } from '@/lib/sanityTypes';
+import PostContent from '@/components/blog/PostContent';
+import BlogNavbar from '@/components/blog/BlogNavbar';
+import UserAuth from '@/components/UserAuth';
+import { ThemeDropdown } from '@/components/Navbar/theme-dropdown';
+import { fetchPostData } from '@/lib/fetchData';
 
 export default async function PostPage({ params }: PostProps) {
   const post = await fetchPostData(params.slug);
@@ -26,7 +26,7 @@ export default async function PostPage({ params }: PostProps) {
         children={<UserAuth />}
       />
       <main data-theme="" className="flex">
-        <PostContent post={post}/> 
+        <PostContent post={post} /> 
       </main>
     </>
   );

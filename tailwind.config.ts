@@ -75,7 +75,7 @@ const config = {
   },
   plugins: [require("tailwindcss-animate"), require("daisyui"), require("@tailwindcss/typography")],
   daisyui: {
-    themes: ["retro", "coffee", "valentine", "aqua"]
+    themes: ["retro", "coffee", "wireframe", "sunset"]
   }
 } satisfies Config
 

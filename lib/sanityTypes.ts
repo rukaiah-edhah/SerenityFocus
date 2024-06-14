@@ -6,8 +6,9 @@ export interface Author {
 }
   
 export interface Category {
-    _id: string;
-    title: string;
+  _id: string;
+  title: string;
+  slug: string;
 }
 
 export interface Post {
@@ -19,6 +20,7 @@ export interface Post {
   author: Author;
   mainImage: {
     asset: {
+      _ref: { _id: string; url: string; };
       _id: string;
       url: string;
     };

@@ -10,8 +10,12 @@ import { themeChange } from 'theme-change'
 import { NavList } from "./nav-list";
 
 export function ResNavbar({
-  nav_items
-}: any){
+  nav_items, children, theme_dropdown
+}: {
+  nav_items: any,
+  theme_dropdown: React.ReactNode,
+  children: React.ReactNode
+}){
   useEffect(() => {
     themeChange(false)
   }, [])
@@ -24,7 +28,7 @@ export function ResNavbar({
         </SheetTrigger>
         <SheetContent side="top" className="bg-base-content/100 border-none text-base-300  flex">
           <div className="mr-4">
-            <NavList nav_items={nav_items} />
+            <NavList nav_items={nav_items} theme_dropdown={theme_dropdown} children={children} />
           </div>
         </SheetContent>
       </Sheet>

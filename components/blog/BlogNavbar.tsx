@@ -2,21 +2,22 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
-import { BlogNavList } from "./blog-nav-list";
 import { nav_class } from "../Navbar/Navbar";
 import { ResNavbar } from "../Navbar/resNavbar";
 import { BlogSearch } from "./blog-search";
+import { NavList } from "../Navbar/nav-list";
+import { nav_items } from "../Navbar/Navbar";
 
 export default function BlogNavbar({
-  theme_dropdown, children,
+ children,
 }: {
-  theme_dropdown: React.ReactNode, children: React.ReactNode;
+ children: React.ReactNode;
 }) {
   useEffect(() => {
     themeChange(false);
   }, []);
 
-  const nav_items = ["Home", theme_dropdown, children, <BlogSearch />];
+  const nav_item = nav_items.slice(0,1);
 
   return (
     <nav
@@ -25,10 +26,12 @@ export default function BlogNavbar({
     >
       <div className="flex items-center justify-end">
         <div className="hidden lg:flex items-end gap-12">
-          <BlogNavList nav_items={nav_items} />
+          <NavList nav_items={nav_item} children={children} theme_dropdown={<BlogSearch />} />
         </div>
         <ResNavbar
           nav_items={nav_items}
+          children={children}
+          theme_dropdown={<BlogSearch />}
         />
       </div>
     </nav>

@@ -10,16 +10,14 @@ export default function About() {
                 const aboutUsModal = document.getElementById('about-us');
                 if (aboutUsModal instanceof HTMLDialogElement){
                     aboutUsModal.showModal();
-                } else {
-                    console.error('About us modal not found')
                 }
             }}>About</button>
-            <dialog id="about-us" className="modal">
+            <dialog id="about-us" className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
                     <form method="dialog">
                         <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                     </form>
-                    <div className="hidden lg:items-center lg:justify-center lg:text-center lg:grid lg:grid-cols-3 lg:gap-2 mb-10">
+                    <div className="flex lg:items-center lg:justify-center lg:text-center lg:grid lg:grid-cols-3 lg:gap-2 mb-10">
                         <div className="rounded-full ">
                             <Link href="https://www.linkedin.com/in/shevan-abdulla-677685236/" target="_blank" className="flex justify-center">
                                 <Image 

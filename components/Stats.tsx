@@ -5,11 +5,9 @@ export default function Stats(){
                 const statsModal = document.getElementById('stats');
                 if (statsModal instanceof HTMLDialogElement){
                     statsModal.showModal();
-                } else {
-                    console.error('Stats Modal not found')
                 }
             }}>Stats</button>
-            <dialog id="stats" className="modal">
+            <dialog id="stats" className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
                     <form method="dialog">
                         <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>

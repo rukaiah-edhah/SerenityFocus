@@ -52,7 +52,7 @@ export default function SidebarDrawer() {
           <li>
             <span className="text-base font-bold mt-4">About the Authors</span>
             <div className="mt-2">
-              <p className="text-sm">We're CS students who love finding new ways to stay productive. On this blog, we share our favorite tips and tricks to help you make the most of your time.</p>
+              <p className="text-sm">${`We're CS students who love finding new ways to stay productive. On this blog, we share our favorite tips and tricks to help you make the most of your time.`}</p>
             </div>
           </li>
         </ul>

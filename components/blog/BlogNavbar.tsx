@@ -17,7 +17,7 @@ export default function BlogNavbar({
     themeChange(false);
   }, []);
 
-  const nav_item = nav_items.slice(0,1);
+  const nav_item = nav_items.slice(0, 2);
 
   return (
     <nav

@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Raleway } from 'next/font/google'
 import './globals.css'
 import Logo from '@/components/Logo'
 import Footer from '@/components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+const raleway = Raleway({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Serenity Focus',
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={raleway.className}>
         <Logo />
         <main>
           {children}

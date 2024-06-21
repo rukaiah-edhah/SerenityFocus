@@ -18,6 +18,8 @@ export default function PostsList() {
   }, []);
 
   return (
+    <div>
+      <h1 className="text-4xl font-bold mb-8 text-center">The Productivity Nerds Blog</h1>
     <div className="lg:grid md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
       {posts.map((post, index) => (
         <Link key={index} href={`/blog/${post.slug}`} className="card bg-base-100 shadow-xl">
@@ -47,6 +49,7 @@ export default function PostsList() {
             </div>
         </Link>
       ))}
+      </div>
     </div>
   )
 }

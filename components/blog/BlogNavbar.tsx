@@ -26,13 +26,16 @@ export default function BlogNavbar({
     >
       <div className="flex items-center justify-end">
         <div className="hidden lg:flex items-end gap-12">
-          <NavList nav_items={nav_item} children={children} theme_dropdown={<BlogSearch />} />
+          <NavList nav_items={nav_item} theme_dropdown={<BlogSearch />}>
+            {children}
+          </NavList>
         </div>
         <ResNavbar
           nav_items={nav_items}
-          children={children}
           theme_dropdown={<BlogSearch />}
-        />
+        >
+          {children}
+        </ResNavbar>
       </div>
     </nav>
   );

@@ -21,10 +21,9 @@ export default async function PostPage({ params }: PostProps) {
 
   return (
     <>
-      <BlogNavbar
-        theme_dropdown={<ThemeDropdown />}
-        children={<UserAuth />}
-      />
+      <BlogNavbar>
+        <UserAuth />
+      </BlogNavbar>
       <main data-theme="" className="flex">
         <PostContent post={post} /> 
       </main>

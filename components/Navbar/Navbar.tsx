@@ -15,13 +15,13 @@ export default function Navbar({children}: {children: React.ReactNode}){
                 <div></div>
                 <div className="flex items-center gap-12">
                     <div className="hidden lg:block mr-4">
-                      <NavList nav_items={nav_items} children={children} theme_dropdown={<ThemeDropdown />} />
+                      <NavList nav_items={nav_items} theme_dropdown={<ThemeDropdown />}>
+                        {children}
+                      </NavList>
                     </div>
-                    <ResNavbar 
-                      nav_items={nav_items}
-                      children={children}
-                      theme_dropdown={<ThemeDropdown />}
-                    />
+                    <ResNavbar nav_items={nav_items} theme_dropdown={<ThemeDropdown />}>
+                      {children}
+                    </ResNavbar>
                 </div>
             </div>
         </nav>

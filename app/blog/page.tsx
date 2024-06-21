@@ -6,9 +6,9 @@ import PostsList from "@/components/blog/PostsList";
 export default function Blog() {
   return (
     <>
-      <BlogNavbar
-        children={<UserAuth />}
-      />
+      <BlogNavbar>
+        <UserAuth />
+      </BlogNavbar>
       <main data-theme="" className="flex">
         <div className="flex-1 p-4">
           <PostsList />

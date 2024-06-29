@@ -3,30 +3,44 @@ import { db } from '@/db';
 import { tasks } from '@/db/schema/tasks';
 import { desc, eq, and, gte, lte } from 'drizzle-orm';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
+import { taskStatistics } from '@/db/schema/taskStatistics';
 
-export async function POST(req: any){
-    const {getUser} = getKindeServerSession();
+export async function POST(req: any) {
+    const { getUser } = getKindeServerSession();
     const user = await getUser();
-
     const { task } = await req.json();
 
-    if (user){
-        await db.insert(tasks).values({
+    if (user) {
+        const [newTask] = await db.insert(tasks).values({
             kindeAuthId: user?.id as string,
             kindeAuthName: user?.given_name as string,
             task: task,
-            completed: false
-        })
+            completed: false,
+        }).returning();
+
+        await db.insert(taskStatistics).values({
+            taskId: newTask.id,
+            userId: user?.id as string,
+            action: 'created',
+            timestamp: new Date(),
+        });
     } else {
-        await db.insert(tasks).values({
+        const [newTask] = await db.insert(tasks).values({
             kindeAuthId: '',
             kindeAuthName: '',
             task: task,
-            completed: false
+            completed: false,
+        }).returning();
+
+        await db.insert(taskStatistics).values({
+            taskId: newTask.id,
+            userId: '',
+            action: 'created',
+            timestamp: new Date(),
         });
     }
-    
-    return NextResponse.json({message: 'submitted'}, {status: 201})
+
+    return NextResponse.json({ message: 'submitted' }, { status: 201 });
 }
 
 export async function DELETE(req: any){
@@ -35,6 +49,33 @@ export async function DELETE(req: any){
         .where(eq(tasks.id, parseInt(id)));
     return NextResponse.json({ message: 'post deleted'}, { status: 201});
 }
+
+
+export async function PATCH(req: any) {
+    const id = req.nextUrl.searchParams.get('id');
+    const { completed } = await req.json();
+    const { getUser } = getKindeServerSession();
+    const user = await getUser();
+    const completedAt = completed ? new Date() : undefined;
+
+    await db.update(tasks)
+        .set({
+            completed,
+        })
+        .where(eq(tasks.id, parseInt(id)));
+
+    if (completed) {
+        await db.insert(taskStatistics).values({
+            taskId: parseInt(id),
+            userId: user?.id as string,
+            action: 'completed',
+            timestamp: completedAt,
+        });
+    }
+
+    return NextResponse.json({ message: 'task updated' }, { status: 200 });
+}
+
 
 const currentDate = new Date();
 const startOfDay = new Date(currentDate);

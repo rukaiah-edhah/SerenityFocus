@@ -1,9 +1,8 @@
-import { pgTable, timestamp, text, index, integer, boolean } from "drizzle-orm/pg-core";
+import { pgTable, timestamp, text, serial, integer, boolean } from "drizzle-orm/pg-core";
 
-let l = 1;
 
 export const tasks = pgTable('tasks', {
-        id: integer('id').notNull().primaryKey().default(l++),
+        id: serial('id').primaryKey().notNull(),
         kindeAuthId: text('kindeauthid'),
         kindeAuthName: text('kindeauthname'),
         task: text('task').notNull(),

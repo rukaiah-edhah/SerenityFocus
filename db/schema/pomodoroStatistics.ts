@@ -1,10 +1,10 @@
-import { pgTable, timestamp, integer, text } from "drizzle-orm/pg-core";
+import { pgTable, timestamp, text, serial } from "drizzle-orm/pg-core";
 
-let l = 1;
 
 export const pomodoroStatistics = pgTable('pomodoro_statistics', {
-    id: integer('id').notNull().primaryKey().default(l++),
+    id: serial('id').primaryKey().notNull(),
     userId: text('user_id').notNull(),
     sessionStart: timestamp('session_start').defaultNow().notNull(),
     sessionEnd: timestamp('session_end'),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
 });

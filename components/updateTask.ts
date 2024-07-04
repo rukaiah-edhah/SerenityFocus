@@ -2,7 +2,7 @@
 
 export const updateTaskStatus = async (taskId: any, completed: any) => {
     try {
-      const response = await fetch(`/api/task/${taskId}`, {
+      const response = await fetch(`/api/task?id=${taskId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

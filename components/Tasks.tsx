@@ -60,6 +60,7 @@ export default function Tasks() {
     const removePost = async (id: any) => {
       const confirmed = confirm('Are you sure?');
 
+
       if (confirmed) {
           const res = await fetch(`/api/task?id=${id}`, {
               method: "DELETE",

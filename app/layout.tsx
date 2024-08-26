@@ -3,6 +3,7 @@ import { Raleway } from 'next/font/google'
 import './globals.css'
 import Logo from '@/components/Logo'
 import Footer from '@/components/Footer'
+import { Analytics } from "@vercel/analytics/react"
 
 const raleway = Raleway({ subsets: ['latin'] })
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <main>
           {children}
         </main>
+        <Analytics />
       </body>
     </html>
   )
